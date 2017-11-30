@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbMercado" Class="DBMercadoClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HOME-PC;Initial Catalog=dbMercado;Persist Security Info=True;User ID=sa" SettingsObjectName="CamadaDados.Properties.Settings" SettingsPropertyName="dbMercadoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cadproduto" Member="Cadproduto">
+    <Type Name="Cadproduto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigoBarra" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="descricaoCompleta" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="qtdEmbalagem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_unidadeMedida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="custoFinal" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="custoVenda" Type="System.Decimal" DbType="Decimal(19,4)" CanBeNull="true" />
+      <Column Name="ID_familiaProduto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descricaoNota" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="pesoLiquido" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="dataCadastro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="validade" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="pesoBruto" Type="System.Decimal" DbType="Decimal(12,3)" CanBeNull="true" />
+      <Column Name="larguraEmbalagem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="alturaEmbalagem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="margemLucro" Type="System.Decimal" DbType="Decimal(11,2)" CanBeNull="true" />
+      <Column Name="dataAlteracao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ID_tipoMercadoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="aceitaMultiplicacaoPdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ID_fornecedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_tipoProduto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="diasDeVendas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pesavel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="vendaControlada" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="vendaPdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tipoFamiliaProduto_Cadproduto" Member="tipoFamiliaProduto" ThisKey="ID_familiaProduto" OtherKey="id" Type="tipoFamiliaProduto" IsForeignKey="true" />
+      <Association Name="tipoFornecedor_Cadproduto" Member="tipoFornecedor" ThisKey="ID_fornecedor" OtherKey="id" Type="tipoFornecedor" IsForeignKey="true" />
+      <Association Name="tipoMercadoria_Cadproduto" Member="tipoMercadoria" ThisKey="ID_tipoMercadoria" OtherKey="id" Type="tipoMercadoria" IsForeignKey="true" />
+      <Association Name="tipoProduto_Cadproduto" Member="tipoProduto" ThisKey="ID_tipoProduto" OtherKey="id" Type="tipoProduto" IsForeignKey="true" />
+      <Association Name="tipoSetor_Cadproduto" Member="tipoSetor" ThisKey="ID_sector" OtherKey="id" Type="tipoSetor" IsForeignKey="true" />
+      <Association Name="tipoUnidadeMedida_Cadproduto" Member="tipoUnidadeMedida" ThisKey="ID_unidadeMedida" OtherKey="id" Type="tipoUnidadeMedida" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoFamiliaProduto" Member="tipoFamiliaProduto">
+    <Type Name="tipoFamiliaProduto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="tipoFamiliaProduto_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_familiaProduto" Type="Cadproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoFornecedor" Member="tipoFornecedor">
+    <Type Name="tipoFornecedor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tipoFornecedor_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_fornecedor" Type="Cadproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoMercadoria" Member="tipoMercadoria">
+    <Type Name="tipoMercadoria">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(999) NOT NULL" CanBeNull="false" />
+      <Association Name="tipoMercadoria_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_tipoMercadoria" Type="Cadproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoProduto" Member="tipoProduto">
+    <Type Name="tipoProduto">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="descricao" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Association Name="tipoProduto_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_tipoProduto" Type="Cadproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoSetor" Member="tipoSetor">
+    <Type Name="tipoSetor">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="tipoSetor_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_sector" Type="Cadproduto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tipoUnidadeMedida" Member="tipoUnidadeMedida">
+    <Type Name="tipoUnidadeMedida">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="tipoUnidadeMedida_Cadproduto" Member="Cadproduto" ThisKey="id" OtherKey="ID_unidadeMedida" Type="Cadproduto" />
+    </Type>
+  </Table>
+</Database>
