@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CamadaDados
 {
-    class DataContextFactory
+   public class DataContextFactory
     {
+
     }
 }

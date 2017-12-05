@@ -1,0 +1,535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MercadoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CadFornecedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cadproduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoBarra" Type="varchar" MaxLength="50" />
+          <Property Name="descricaoCompleta" Type="varchar" MaxLength="60" />
+          <Property Name="qtdEmbalagem" Type="int" />
+          <Property Name="ID_unidadeMedida" Type="int" />
+          <Property Name="ID_sector" Type="int" />
+          <Property Name="custoFinal" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="custoVenda" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="ID_familiaProduto" Type="int" />
+          <Property Name="descricaoNota" Type="varchar" MaxLength="22" />
+          <Property Name="pesoLiquido" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="dataCadastro" Type="datetime" />
+          <Property Name="validade" Type="date" />
+          <Property Name="pesoBruto" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="larguraEmbalagem" Type="int" />
+          <Property Name="alturaEmbalagem" Type="int" />
+          <Property Name="margemLucro" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="dataAlteracao" Type="datetime" />
+          <Property Name="ID_tipoMercadoria" Type="int" />
+          <Property Name="aceitaMultiplicacaoPdv" Type="bit" />
+          <Property Name="ID_fornecedor" Type="int" />
+          <Property Name="diasDeVendas" Type="int" />
+          <Property Name="pesavel" Type="bit" />
+          <Property Name="vendaControlada" Type="bit" />
+          <Property Name="vendaPdv" Type="bit" />
+          <Property Name="estoque" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="abaixoMinimo" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tipoFamiliaProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tipoMercadoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="None" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="tipoProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="45" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoSetor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tipoUnidadeMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Cadproduto_CadFornecedor">
+          <End Role="CadFornecedor" Type="Self.CadFornecedor" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CadFornecedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoFamiliaProduto">
+          <End Role="tipoFamiliaProduto" Type="Self.tipoFamiliaProduto" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoFamiliaProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_familiaProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoMercadoria">
+          <End Role="tipoMercadoria" Type="Self.tipoMercadoria" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoMercadoria">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_tipoMercadoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoSetor">
+          <End Role="tipoSetor" Type="Self.tipoSetor" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoSetor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_sector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoUnidadeMedida">
+          <End Role="tipoUnidadeMedida" Type="Self.tipoUnidadeMedida" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoUnidadeMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_unidadeMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MercadoModelStoreContainer">
+          <EntitySet Name="CadFornecedor" EntityType="Self.CadFornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cadproduto" EntityType="Self.Cadproduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoFamiliaProduto" EntityType="Self.tipoFamiliaProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoMercadoria" EntityType="Self.tipoMercadoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoProduto" EntityType="Self.tipoProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoSetor" EntityType="Self.tipoSetor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipoUnidadeMedida" EntityType="Self.tipoUnidadeMedida" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cadproduto_CadFornecedor" Association="Self.FK_Cadproduto_CadFornecedor">
+            <End Role="CadFornecedor" EntitySet="CadFornecedor" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoFamiliaProduto" Association="Self.FK_Cadproduto_tipoFamiliaProduto">
+            <End Role="tipoFamiliaProduto" EntitySet="tipoFamiliaProduto" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoMercadoria" Association="Self.FK_Cadproduto_tipoMercadoria">
+            <End Role="tipoMercadoria" EntitySet="tipoMercadoria" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoSetor" Association="Self.FK_Cadproduto_tipoSetor">
+            <End Role="tipoSetor" EntitySet="tipoSetor" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoUnidadeMedida" Association="Self.FK_Cadproduto_tipoUnidadeMedida">
+            <End Role="tipoUnidadeMedida" EntitySet="tipoUnidadeMedida" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MercadoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cadproduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoBarra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descricaoCompleta" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="qtdEmbalagem" Type="Int32" />
+          <Property Name="ID_unidadeMedida" Type="Int32" />
+          <Property Name="ID_sector" Type="Int32" />
+          <Property Name="custoFinal" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="custoVenda" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="ID_familiaProduto" Type="Int32" />
+          <Property Name="descricaoNota" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="pesoLiquido" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="dataCadastro" Type="DateTime" Precision="3" />
+          <Property Name="validade" Type="DateTime" Precision="0" />
+          <Property Name="pesoBruto" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="larguraEmbalagem" Type="Int32" />
+          <Property Name="alturaEmbalagem" Type="Int32" />
+          <Property Name="margemLucro" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="dataAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="ID_tipoMercadoria" Type="Int32" />
+          <Property Name="aceitaMultiplicacaoPdv" Type="Boolean" />
+          <Property Name="ID_fornecedor" Type="Int32" />
+          <Property Name="ID_tipoProduto" Type="Int32" />
+          <Property Name="diasDeVendas" Type="Int32" />
+          <Property Name="pesavel" Type="Boolean" />
+          <Property Name="vendaControlada" Type="Boolean" />
+          <Property Name="vendaPdv" Type="Boolean" />
+          <NavigationProperty Name="tipoFamiliaProduto" Relationship="Self.FK_Cadproduto_tipoFamiliaProduto" FromRole="Cadproduto" ToRole="tipoFamiliaProduto" />
+          <NavigationProperty Name="tipoFornecedor" Relationship="Self.FK_Cadproduto_tipoFornecedor" FromRole="Cadproduto" ToRole="tipoFornecedor" />
+          <NavigationProperty Name="tipoMercadoria" Relationship="Self.FK_Cadproduto_tipoMercadoria" FromRole="Cadproduto" ToRole="tipoMercadoria" />
+          <NavigationProperty Name="tipoProduto" Relationship="Self.FK_Cadproduto_tipoProduto" FromRole="Cadproduto" ToRole="tipoProduto" />
+          <NavigationProperty Name="tipoSetor" Relationship="Self.FK_Cadproduto_tipoSetor" FromRole="Cadproduto" ToRole="tipoSetor" />
+          <NavigationProperty Name="tipoUnidadeMedida" Relationship="Self.FK_Cadproduto_tipoUnidadeMedida" FromRole="Cadproduto" ToRole="tipoUnidadeMedida" />
+          <Property Name="estoque" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="abaixoMinimo" Type="Boolean" />
+          <NavigationProperty Name="CadFornecedor" Relationship="MercadoModel.FK_Cadproduto_CadFornecedor" FromRole="Cadproduto" ToRole="CadFornecedor" />
+        </EntityType>
+        <EntityType Name="tipoFamiliaProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoFamiliaProduto" FromRole="tipoFamiliaProduto" ToRole="Cadproduto" />
+        </EntityType>
+        <EntityType Name="tipoFornecedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoFornecedor" FromRole="tipoFornecedor" ToRole="Cadproduto" />
+        </EntityType>
+        <EntityType Name="tipoMercadoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoMercadoria" FromRole="tipoMercadoria" ToRole="Cadproduto" />
+        </EntityType>
+        <EntityType Name="tipoProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoProduto" FromRole="tipoProduto" ToRole="Cadproduto" />
+        </EntityType>
+        <EntityType Name="tipoSetor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoSetor" FromRole="tipoSetor" ToRole="Cadproduto" />
+        </EntityType>
+        <EntityType Name="tipoUnidadeMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="Self.FK_Cadproduto_tipoUnidadeMedida" FromRole="tipoUnidadeMedida" ToRole="Cadproduto" />
+        </EntityType>
+        <Association Name="FK_Cadproduto_tipoFamiliaProduto">
+          <End Role="tipoFamiliaProduto" Type="Self.tipoFamiliaProduto" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoFamiliaProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_familiaProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoFornecedor">
+          <End Role="tipoFornecedor" Type="Self.tipoFornecedor" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoFornecedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoMercadoria">
+          <End Role="tipoMercadoria" Type="Self.tipoMercadoria" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoMercadoria">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_tipoMercadoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoProduto">
+          <End Role="tipoProduto" Type="Self.tipoProduto" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_tipoProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoSetor">
+          <End Role="tipoSetor" Type="Self.tipoSetor" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoSetor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_sector" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoUnidadeMedida">
+          <End Role="tipoUnidadeMedida" Type="Self.tipoUnidadeMedida" Multiplicity="0..1" />
+          <End Role="Cadproduto" Type="Self.Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tipoUnidadeMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_unidadeMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbMercadoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cadproduto" EntityType="Self.Cadproduto" />
+          <EntitySet Name="tipoFamiliaProduto" EntityType="Self.tipoFamiliaProduto" />
+          <EntitySet Name="tipoFornecedor" EntityType="Self.tipoFornecedor" />
+          <EntitySet Name="tipoMercadoria" EntityType="Self.tipoMercadoria" />
+          <EntitySet Name="tipoProduto" EntityType="Self.tipoProduto" />
+          <EntitySet Name="tipoSetor" EntityType="Self.tipoSetor" />
+          <EntitySet Name="tipoUnidadeMedida" EntityType="Self.tipoUnidadeMedida" />
+          <AssociationSet Name="FK_Cadproduto_tipoFamiliaProduto" Association="Self.FK_Cadproduto_tipoFamiliaProduto">
+            <End Role="tipoFamiliaProduto" EntitySet="tipoFamiliaProduto" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoFornecedor" Association="Self.FK_Cadproduto_tipoFornecedor">
+            <End Role="tipoFornecedor" EntitySet="tipoFornecedor" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoMercadoria" Association="Self.FK_Cadproduto_tipoMercadoria">
+            <End Role="tipoMercadoria" EntitySet="tipoMercadoria" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoProduto" Association="Self.FK_Cadproduto_tipoProduto">
+            <End Role="tipoProduto" EntitySet="tipoProduto" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoSetor" Association="Self.FK_Cadproduto_tipoSetor">
+            <End Role="tipoSetor" EntitySet="tipoSetor" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoUnidadeMedida" Association="Self.FK_Cadproduto_tipoUnidadeMedida">
+            <End Role="tipoUnidadeMedida" EntitySet="tipoUnidadeMedida" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+          <EntitySet Name="sysdiagrams" EntityType="MercadoModel.sysdiagrams" />
+          <EntitySet Name="CadFornecedor" EntityType="MercadoModel.CadFornecedor" />
+          <AssociationSet Name="FK_Cadproduto_CadFornecedor" Association="MercadoModel.FK_Cadproduto_CadFornecedor">
+            <End Role="CadFornecedor" EntitySet="CadFornecedor" />
+            <End Role="Cadproduto" EntitySet="Cadproduto" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CadFornecedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cadproduto" Relationship="MercadoModel.FK_Cadproduto_CadFornecedor" FromRole="CadFornecedor" ToRole="Cadproduto" />
+        </EntityType>
+        <Association Name="FK_Cadproduto_CadFornecedor">
+          <End Type="MercadoModel.CadFornecedor" Role="CadFornecedor" Multiplicity="0..1" />
+          <End Type="MercadoModel.Cadproduto" Role="Cadproduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CadFornecedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Cadproduto">
+              <PropertyRef Name="ID_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MercadoModelStoreContainer" CdmEntityContainer="dbMercadoEntities">
+          <EntitySetMapping Name="Cadproduto">
+            <EntityTypeMapping TypeName="MercadoModel.Cadproduto">
+              <MappingFragment StoreEntitySet="Cadproduto">
+                <ScalarProperty Name="abaixoMinimo" ColumnName="abaixoMinimo" />
+                <ScalarProperty Name="estoque" ColumnName="estoque" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigoBarra" ColumnName="codigoBarra" />
+                <ScalarProperty Name="descricaoCompleta" ColumnName="descricaoCompleta" />
+                <ScalarProperty Name="qtdEmbalagem" ColumnName="qtdEmbalagem" />
+                <ScalarProperty Name="ID_unidadeMedida" ColumnName="ID_unidadeMedida" />
+                <ScalarProperty Name="ID_sector" ColumnName="ID_sector" />
+                <ScalarProperty Name="custoFinal" ColumnName="custoFinal" />
+                <ScalarProperty Name="custoVenda" ColumnName="custoVenda" />
+                <ScalarProperty Name="ID_familiaProduto" ColumnName="ID_familiaProduto" />
+                <ScalarProperty Name="descricaoNota" ColumnName="descricaoNota" />
+                <ScalarProperty Name="pesoLiquido" ColumnName="pesoLiquido" />
+                <ScalarProperty Name="dataCadastro" ColumnName="dataCadastro" />
+                <ScalarProperty Name="validade" ColumnName="validade" />
+                <ScalarProperty Name="pesoBruto" ColumnName="pesoBruto" />
+                <ScalarProperty Name="larguraEmbalagem" ColumnName="larguraEmbalagem" />
+                <ScalarProperty Name="alturaEmbalagem" ColumnName="alturaEmbalagem" />
+                <ScalarProperty Name="margemLucro" ColumnName="margemLucro" />
+                <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+                <ScalarProperty Name="ID_tipoMercadoria" ColumnName="ID_tipoMercadoria" />
+                <ScalarProperty Name="aceitaMultiplicacaoPdv" ColumnName="aceitaMultiplicacaoPdv" />
+                <ScalarProperty Name="ID_fornecedor" ColumnName="ID_fornecedor" />
+                <ScalarProperty Name="diasDeVendas" ColumnName="diasDeVendas" />
+                <ScalarProperty Name="pesavel" ColumnName="pesavel" />
+                <ScalarProperty Name="vendaControlada" ColumnName="vendaControlada" />
+                <ScalarProperty Name="vendaPdv" ColumnName="vendaPdv" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoMercadoria">
+            <EntityTypeMapping TypeName="MercadoModel.tipoMercadoria">
+              <MappingFragment StoreEntitySet="tipoMercadoria">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoProduto">
+            <EntityTypeMapping TypeName="MercadoModel.tipoProduto">
+              <MappingFragment StoreEntitySet="tipoProduto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoSetor">
+            <EntityTypeMapping TypeName="MercadoModel.tipoSetor">
+              <MappingFragment StoreEntitySet="tipoSetor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoUnidadeMedida">
+            <EntityTypeMapping TypeName="MercadoModel.tipoUnidadeMedida">
+              <MappingFragment StoreEntitySet="tipoUnidadeMedida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="MercadoModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CadFornecedor">
+            <EntityTypeMapping TypeName="MercadoModel.CadFornecedor">
+              <MappingFragment StoreEntitySet="CadFornecedor">
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipoFamiliaProduto">
+            <EntityTypeMapping TypeName="IsTypeOf(MercadoModel.tipoFamiliaProduto)">
+              <MappingFragment StoreEntitySet="tipoMercadoria">
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

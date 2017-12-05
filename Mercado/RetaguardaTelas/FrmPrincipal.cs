@@ -98,5 +98,12 @@ namespace RetaguardaTelas
                 childForm.Close();
             }
         }
+
+        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultarProduto frmConsultarProduto = new FrmConsultarProduto();
+            frmConsultarProduto.MdiParent = this;
+            frmConsultarProduto.Show();
+        }
     }
 }

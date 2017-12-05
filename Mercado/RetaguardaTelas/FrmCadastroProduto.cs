@@ -16,5 +16,10 @@ namespace RetaguardaTelas
         {
             InitializeComponent();
         }
+
+        private void FrmCadastroProduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
