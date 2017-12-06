@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarProduto));
             this.dataGridViewConsultaProduto = new System.Windows.Forms.DataGridView();
             this.txtCodigoDescricao = new System.Windows.Forms.TextBox();
@@ -41,18 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePickerDataInicial = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerDataFinal = new System.Windows.Forms.DateTimePicker();
-            this.cadprodutoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoBarraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descricaoCompletaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qtdEmbalagemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDsectorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.custoVendaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataCadastroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoMercadoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoSetorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxSituacao = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -60,7 +43,6 @@
             this.btnEditar = new System.Windows.Forms.ToolStripButton();
             this.btnAlterarLote = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaProduto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cadprodutoBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,21 +50,7 @@
             // 
             this.dataGridViewConsultaProduto.AllowUserToAddRows = false;
             this.dataGridViewConsultaProduto.AllowUserToDeleteRows = false;
-            this.dataGridViewConsultaProduto.AutoGenerateColumns = false;
             this.dataGridViewConsultaProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewConsultaProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.codigoBarraDataGridViewTextBoxColumn,
-            this.descricaoCompletaDataGridViewTextBoxColumn,
-            this.qtdEmbalagemDataGridViewTextBoxColumn,
-            this.iDsectorDataGridViewTextBoxColumn,
-            this.custoVendaDataGridViewTextBoxColumn,
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn,
-            this.dataCadastroDataGridViewTextBoxColumn,
-            this.tipoMercadoriaDataGridViewTextBoxColumn,
-            this.tipoSetorDataGridViewTextBoxColumn,
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn});
-            this.dataGridViewConsultaProduto.DataSource = this.cadprodutoBindingSource;
             this.dataGridViewConsultaProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridViewConsultaProduto.Location = new System.Drawing.Point(0, 106);
             this.dataGridViewConsultaProduto.Name = "dataGridViewConsultaProduto";
@@ -140,98 +108,6 @@
             this.dateTimePickerDataFinal.Size = new System.Drawing.Size(96, 20);
             this.dateTimePickerDataFinal.TabIndex = 10;
             // 
-            // cadprodutoBindingSource
-            // 
-            this.cadprodutoBindingSource.DataSource = typeof(CamadaDados.Cadproduto);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.idDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // codigoBarraDataGridViewTextBoxColumn
-            // 
-            this.codigoBarraDataGridViewTextBoxColumn.DataPropertyName = "codigoBarra";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.codigoBarraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.codigoBarraDataGridViewTextBoxColumn.HeaderText = "Codigo Barra";
-            this.codigoBarraDataGridViewTextBoxColumn.Name = "codigoBarraDataGridViewTextBoxColumn";
-            this.codigoBarraDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descricaoCompletaDataGridViewTextBoxColumn
-            // 
-            this.descricaoCompletaDataGridViewTextBoxColumn.DataPropertyName = "descricaoCompleta";
-            this.descricaoCompletaDataGridViewTextBoxColumn.HeaderText = "Descrição";
-            this.descricaoCompletaDataGridViewTextBoxColumn.Name = "descricaoCompletaDataGridViewTextBoxColumn";
-            this.descricaoCompletaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descricaoCompletaDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // qtdEmbalagemDataGridViewTextBoxColumn
-            // 
-            this.qtdEmbalagemDataGridViewTextBoxColumn.DataPropertyName = "qtdEmbalagem";
-            this.qtdEmbalagemDataGridViewTextBoxColumn.HeaderText = "Qnt.Embalagem";
-            this.qtdEmbalagemDataGridViewTextBoxColumn.Name = "qtdEmbalagemDataGridViewTextBoxColumn";
-            this.qtdEmbalagemDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDsectorDataGridViewTextBoxColumn
-            // 
-            this.iDsectorDataGridViewTextBoxColumn.DataPropertyName = "ID_sector";
-            this.iDsectorDataGridViewTextBoxColumn.HeaderText = "ID_sector";
-            this.iDsectorDataGridViewTextBoxColumn.Name = "iDsectorDataGridViewTextBoxColumn";
-            this.iDsectorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // custoVendaDataGridViewTextBoxColumn
-            // 
-            this.custoVendaDataGridViewTextBoxColumn.DataPropertyName = "custoVenda";
-            this.custoVendaDataGridViewTextBoxColumn.HeaderText = "Valor Venda";
-            this.custoVendaDataGridViewTextBoxColumn.Name = "custoVendaDataGridViewTextBoxColumn";
-            this.custoVendaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDfamiliaProdutoDataGridViewTextBoxColumn
-            // 
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn.DataPropertyName = "ID_familiaProduto";
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn.HeaderText = "ID_familiaProduto";
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn.Name = "iDfamiliaProdutoDataGridViewTextBoxColumn";
-            this.iDfamiliaProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataCadastroDataGridViewTextBoxColumn
-            // 
-            this.dataCadastroDataGridViewTextBoxColumn.DataPropertyName = "dataCadastro";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dataCadastroDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataCadastroDataGridViewTextBoxColumn.HeaderText = "dataCadastro";
-            this.dataCadastroDataGridViewTextBoxColumn.Name = "dataCadastroDataGridViewTextBoxColumn";
-            this.dataCadastroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoMercadoriaDataGridViewTextBoxColumn
-            // 
-            this.tipoMercadoriaDataGridViewTextBoxColumn.DataPropertyName = "tipoMercadoria";
-            this.tipoMercadoriaDataGridViewTextBoxColumn.HeaderText = "tipoMercadoria";
-            this.tipoMercadoriaDataGridViewTextBoxColumn.Name = "tipoMercadoriaDataGridViewTextBoxColumn";
-            this.tipoMercadoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoSetorDataGridViewTextBoxColumn
-            // 
-            this.tipoSetorDataGridViewTextBoxColumn.DataPropertyName = "tipoSetor";
-            this.tipoSetorDataGridViewTextBoxColumn.HeaderText = "tipoSetor";
-            this.tipoSetorDataGridViewTextBoxColumn.Name = "tipoSetorDataGridViewTextBoxColumn";
-            this.tipoSetorDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoUnidadeMedidaDataGridViewTextBoxColumn
-            // 
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.DataPropertyName = "tipoUnidadeMedida";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.HeaderText = "Medida";
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.Name = "tipoUnidadeMedidaDataGridViewTextBoxColumn";
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoUnidadeMedidaDataGridViewTextBoxColumn.Width = 60;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -269,6 +145,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(23, 22);
             this.btnAdd.Text = "Adicionar Produto";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEditar
             // 
@@ -309,7 +186,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta Produto";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewConsultaProduto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cadprodutoBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -320,7 +196,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewConsultaProduto;
-        private System.Windows.Forms.BindingSource cadprodutoBindingSource;
         private System.Windows.Forms.TextBox txtCodigoDescricao;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

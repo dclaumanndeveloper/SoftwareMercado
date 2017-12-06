@@ -32,19 +32,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadastroProduto));
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxUnMedida = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnAdicionar = new System.Windows.Forms.ToolStripButton();
+            this.btnCancelar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
+            this.btnCopiarDados = new System.Windows.Forms.ToolStripButton();
+            this.txtDescriNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -57,15 +66,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerValidade = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.btnDeletarCodigoBarra = new System.Windows.Forms.PictureBox();
+            this.btnAdicionarCodigoBarra = new System.Windows.Forms.PictureBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -74,20 +81,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletarCodigoBarra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarCodigoBarra)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -108,13 +108,13 @@
             this.maskedTextBox1.TabIndex = 1;
             this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
-            // comboBox1
+            // comboBoxUnMedida
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(123, 87);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(76, 21);
-            this.comboBox1.TabIndex = 2;
+            this.comboBoxUnMedida.FormattingEnabled = true;
+            this.comboBoxUnMedida.Location = new System.Drawing.Point(123, 87);
+            this.comboBoxUnMedida.Name = "comboBoxUnMedida";
+            this.comboBoxUnMedida.Size = new System.Drawing.Size(76, 21);
+            this.comboBoxUnMedida.TabIndex = 2;
             // 
             // checkBox1
             // 
@@ -136,16 +136,66 @@
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Location = new System.Drawing.Point(531, 242);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 147);
+            this.groupBox1.Size = new System.Drawing.Size(319, 167);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // checkBox6
             // 
-            this.textBox1.Location = new System.Drawing.Point(123, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 20);
-            this.textBox1.TabIndex = 6;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Location = new System.Drawing.Point(189, 106);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(110, 17);
+            this.checkBox6.TabIndex = 8;
+            this.checkBox6.Text = "Permite Desconto";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Location = new System.Drawing.Point(189, 65);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(121, 17);
+            this.checkBox5.TabIndex = 7;
+            this.checkBox5.Text = "Aceita Multiplicação";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(189, 19);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(66, 17);
+            this.checkBox4.TabIndex = 6;
+            this.checkBox4.Text = "Cotação";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(22, 106);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(82, 17);
+            this.checkBox3.TabIndex = 5;
+            this.checkBox3.Text = "Venda PDV";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(22, 65);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(111, 17);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "Venda Controlada";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(123, 40);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(75, 20);
+            this.txtCodigo.TabIndex = 6;
             // 
             // errorProvider1
             // 
@@ -154,27 +204,64 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.btnAdicionar,
+            this.btnCancelar,
+            this.btnSalvar,
+            this.btnCopiarDados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(987, 25);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // textBox2
+            // btnAdicionar
             // 
-            this.textBox2.Location = new System.Drawing.Point(720, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 20);
-            this.textBox2.TabIndex = 11;
+            this.btnAdicionar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnAdicionar.Enabled = false;
+            this.btnAdicionar.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionar.Image")));
+            this.btnAdicionar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(23, 22);
+            this.btnAdicionar.Text = "Adicionar Produto";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(23, 22);
+            this.btnCancelar.Text = "Cancelar";
+            // 
+            // btnSalvar
+            // 
+            this.btnSalvar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(23, 22);
+            this.btnSalvar.Text = "Salvar";
+            // 
+            // btnCopiarDados
+            // 
+            this.btnCopiarDados.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnCopiarDados.Image = ((System.Drawing.Image)(resources.GetObject("btnCopiarDados.Image")));
+            this.btnCopiarDados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnCopiarDados.Name = "btnCopiarDados";
+            this.btnCopiarDados.Size = new System.Drawing.Size(23, 22);
+            this.btnCopiarDados.Text = "Copiar Dados Produto";
+            // 
+            // txtDescriNota
+            // 
+            this.txtDescriNota.Location = new System.Drawing.Point(720, 40);
+            this.txtDescriNota.Name = "txtDescriNota";
+            this.txtDescriNota.Size = new System.Drawing.Size(253, 20);
+            this.txtDescriNota.TabIndex = 11;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(639, 47);
+            this.label2.Location = new System.Drawing.Point(639, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 13);
             this.label2.TabIndex = 10;
@@ -213,12 +300,12 @@
             this.label4.Text = "Qnt.Embalagem:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox5
+            // txtDescricao
             // 
-            this.textBox5.Location = new System.Drawing.Point(291, 41);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(342, 20);
-            this.textBox5.TabIndex = 17;
+            this.txtDescricao.Location = new System.Drawing.Point(291, 41);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(342, 20);
+            this.txtDescricao.TabIndex = 17;
             // 
             // label5
             // 
@@ -323,22 +410,22 @@
             this.label11.Text = "Custo Venda:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateTimePicker1
+            // dateTimePickerValidade
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(596, 143);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(95, 20);
-            this.dateTimePicker1.TabIndex = 29;
+            this.dateTimePickerValidade.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerValidade.Location = new System.Drawing.Point(596, 143);
+            this.dateTimePickerValidade.Name = "dateTimePickerValidade";
+            this.dateTimePickerValidade.Size = new System.Drawing.Size(95, 20);
+            this.dateTimePickerValidade.TabIndex = 29;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(528, 146);
+            this.label12.Location = new System.Drawing.Point(542, 147);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.Size = new System.Drawing.Size(51, 13);
             this.label12.TabIndex = 30;
-            this.label12.Text = "Vencimento:";
+            this.label12.Text = "Validade:";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label13
@@ -356,60 +443,44 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(30, 38);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(312, 128);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(312, 85);
             this.dataGridView1.TabIndex = 32;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.btnDeletarCodigoBarra);
+            this.groupBox2.Controls.Add(this.btnAdicionarCodigoBarra);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(122, 242);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(370, 217);
+            this.groupBox2.Size = new System.Drawing.Size(370, 167);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro Codigo Barra";
             // 
-            // checkBox2
+            // btnDeletarCodigoBarra
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(22, 65);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(111, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Venda Controlada";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.btnDeletarCodigoBarra.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeletarCodigoBarra.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletarCodigoBarra.Image")));
+            this.btnDeletarCodigoBarra.Location = new System.Drawing.Point(310, 128);
+            this.btnDeletarCodigoBarra.Name = "btnDeletarCodigoBarra";
+            this.btnDeletarCodigoBarra.Size = new System.Drawing.Size(32, 32);
+            this.btnDeletarCodigoBarra.TabIndex = 34;
+            this.btnDeletarCodigoBarra.TabStop = false;
             // 
-            // checkBox3
+            // btnAdicionarCodigoBarra
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(22, 106);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(82, 17);
-            this.checkBox3.TabIndex = 5;
-            this.checkBox3.Text = "Venda PDV";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(189, 19);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(66, 17);
-            this.checkBox4.TabIndex = 6;
-            this.checkBox4.Text = "Cotação";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(189, 65);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(121, 17);
-            this.checkBox5.TabIndex = 7;
-            this.checkBox5.Text = "Aceita Multiplicação";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.btnAdicionarCodigoBarra.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdicionarCodigoBarra.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarCodigoBarra.Image")));
+            this.btnAdicionarCodigoBarra.Location = new System.Drawing.Point(263, 128);
+            this.btnAdicionarCodigoBarra.Name = "btnAdicionarCodigoBarra";
+            this.btnAdicionarCodigoBarra.Size = new System.Drawing.Size(32, 32);
+            this.btnAdicionarCodigoBarra.TabIndex = 33;
+            this.btnAdicionarCodigoBarra.TabStop = false;
+            this.btnAdicionarCodigoBarra.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAdicionarCodigoBarra_MouseClick);
+            this.btnAdicionarCodigoBarra.MouseLeave += new System.EventHandler(this.btnAdicionarCodigoBarra_MouseLeave);
+            this.btnAdicionarCodigoBarra.MouseHover += new System.EventHandler(this.btnAdicionarCodigoBarra_MouseHover);
             // 
             // textBox8
             // 
@@ -466,7 +537,7 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(620, 192);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(76, 20);
+            this.textBox11.Size = new System.Drawing.Size(71, 20);
             this.textBox11.TabIndex = 39;
             // 
             // label17
@@ -479,75 +550,11 @@
             this.label17.Text = "Qnt.Estoque:";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(189, 106);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(110, 17);
-            this.checkBox6.TabIndex = 8;
-            this.checkBox6.Text = "Permite Desconto";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(263, 172);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.TabIndex = 33;
-            this.pictureBox1.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "toolStripButton1";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(310, 172);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
             // FrmCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 564);
+            this.ClientSize = new System.Drawing.Size(987, 466);
             this.Controls.Add(this.textBox11);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox10);
@@ -558,7 +565,7 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerValidade);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.textBox6);
@@ -570,21 +577,23 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescriNota);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.comboBoxUnMedida);
             this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmCadastroProduto";
             this.Text = "Cadastro Produto";
             this.Load += new System.EventHandler(this.FrmCadastroProduto_Load);
@@ -595,8 +604,8 @@
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnDeletarCodigoBarra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAdicionarCodigoBarra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -606,18 +615,18 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxUnMedida;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescriNota;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.TextBox textBox6;
@@ -632,7 +641,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerValidade;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -649,11 +658,11 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripButton btnAdicionar;
+        private System.Windows.Forms.ToolStripButton btnCopiarDados;
+        private System.Windows.Forms.ToolStripButton btnCancelar;
+        private System.Windows.Forms.ToolStripButton btnSalvar;
+        private System.Windows.Forms.PictureBox btnDeletarCodigoBarra;
+        private System.Windows.Forms.PictureBox btnAdicionarCodigoBarra;
     }
 }

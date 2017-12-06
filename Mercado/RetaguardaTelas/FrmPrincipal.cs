@@ -54,18 +54,6 @@ namespace RetaguardaTelas
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toolStrip.Visible = toolBarToolStripMenuItem.Checked;
@@ -104,6 +92,11 @@ namespace RetaguardaTelas
             FrmConsultarProduto frmConsultarProduto = new FrmConsultarProduto();
             frmConsultarProduto.MdiParent = this;
             frmConsultarProduto.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

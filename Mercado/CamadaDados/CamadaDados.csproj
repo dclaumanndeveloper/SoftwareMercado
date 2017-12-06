@@ -50,65 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CadFornecedor.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Cadproduto.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataContextFactory.cs" />
-    <Compile Include="DbMercadoEntity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbMercadoEntity.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DbMercadoEntity.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DbMercadoEntity.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DbMercadoEntity.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoFamiliaProduto.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoFornecedor.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoMercadoria.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoProduto.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoSetor.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="tipoUnidadeMedida.cs">
-      <DependentUpon>DbMercadoEntity.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EntityDeploy Include="DbMercadoEntity.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbMercadoEntity.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DbMercadoEntity.edmx.diagram">
-      <DependentUpon>DbMercadoEntity.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -118,18 +68,6 @@
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DbMercadoEntity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DbMercadoEntity.Context.cs</LastGenOutput>
-      <DependentUpon>DbMercadoEntity.edmx</DependentUpon>
-    </Content>
-    <Content Include="DbMercadoEntity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbMercadoEntity.edmx</DependentUpon>
-      <LastGenOutput>DbMercadoEntity.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

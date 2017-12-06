@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCadastroCodigoBarra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadastroCodigoBarra.Designer.cs">
+      <DependentUpon>FrmCadastroCodigoBarra.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,6 +73,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmCadastroCodigoBarra.resx">
+      <DependentUpon>FrmCadastroCodigoBarra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCadastroProduto.resx">
       <DependentUpon>FrmCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>

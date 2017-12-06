@@ -21,5 +21,22 @@ namespace RetaguardaTelas
         {
 
         }
+
+        private void btnAdicionarCodigoBarra_MouseHover(object sender, EventArgs e)
+        {
+            btnAdicionarCodigoBarra.BackColor = Color.Lavender;
+        }
+
+        private void btnAdicionarCodigoBarra_MouseLeave(object sender, EventArgs e)
+        {
+            btnAdicionarCodigoBarra.BackColor = Color.Transparent;
+
+        }
+
+        private void btnAdicionarCodigoBarra_MouseClick(object sender, MouseEventArgs e)
+        {
+            btnAdicionarCodigoBarra.BackColor = Color.Fuchsia;
+
+        }
     }
 }
