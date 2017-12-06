@@ -1,0 +1,94 @@
+CREATE TABLE [dbo].[TabelaCadProduto](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[codigoBarra] [varchar](50) NULL,
+	[descricaoCompleta] [varchar](60) NULL,
+	[qtdEmbalagem] [int] NULL,
+	[ID_unidadeMedida] [int] NULL,
+	[ID_sector] [int] NULL,
+	[custoFinal] [decimal](11, 2) NULL,
+	[custoVenda] [decimal](11, 2) NULL,
+	[ID_familiaProduto] [int] NULL,
+	[descricaoNota] [varchar](22) NULL,
+	[pesoLiquido] [decimal](12, 2) NULL,
+	[dataCadastro] [datetime] NULL,
+	[validade] [date] NULL,
+	[pesoBruto] [decimal](12, 2) NULL,
+	[larguraEmbalagem] [int] NULL,
+	[alturaEmbalagem] [int] NULL,
+	[margemLucro] [decimal](11, 2) NULL,
+	[dataAlteracao] [datetime] NULL,
+	[ID_tipoMercadoria] [int] NULL,
+	[aceitaMultiplicacaoPdv] [bit] NULL,
+	[ID_fornecedor] [int] NULL,
+	[diasDeVendas] [int] NULL,
+	[pesavel] [bit] NULL,
+	[vendaControlada] [bit] NULL,
+	[ID_Comprador] [int] NULL,
+	[vendaPdv] [bit] NULL,
+	[estoque] [decimal](18, 0) NULL,
+	[abaixoMinimo] [bit] NULL,
+	[quantEmbalagem] [int] NULL,
+	[ID_Loja] [int] NULL,
+	[cotacao] [bit] NULL,
+	[permiteDesconto] [bit] NULL,
+ CONSTRAINT [pk_produto] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] ADD  CONSTRAINT [DF__produto__vendaco__4F47C5E3]  DEFAULT ((0)) FOR [vendaControlada]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] ADD  CONSTRAINT [DF__produto__vendapd__503BEA1C]  DEFAULT ((0)) FOR [vendaPdv]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_Cadproduto_tipoFamiliaProduto] FOREIGN KEY([ID_familiaProduto])
+REFERENCES [dbo].[TabelaFamiliaProduto] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_Cadproduto_tipoFamiliaProduto]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_Cadproduto_tipoMercadoria] FOREIGN KEY([ID_tipoMercadoria])
+REFERENCES [dbo].[TabelaMercadoria] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_Cadproduto_tipoMercadoria]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_Cadproduto_tipoSetor] FOREIGN KEY([ID_sector])
+REFERENCES [dbo].[TabelaSetor] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_Cadproduto_tipoSetor]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_Cadproduto_tipoUnidadeMedida] FOREIGN KEY([ID_unidadeMedida])
+REFERENCES [dbo].[TabelaUnidadeMedida] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_Cadproduto_tipoUnidadeMedida]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_TabelaCadProduto_TabelaComprador] FOREIGN KEY([ID_Comprador])
+REFERENCES [dbo].[TabelaComprador] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_TabelaCadProduto_TabelaComprador]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_TabelaCadProduto_TabelaFornecedor] FOREIGN KEY([ID_fornecedor])
+REFERENCES [dbo].[TabelaFornecedor] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_TabelaCadProduto_TabelaFornecedor]
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto]  WITH CHECK ADD  CONSTRAINT [FK_TabelaCadProduto_TabelaLoja] FOREIGN KEY([ID_Loja])
+REFERENCES [dbo].[TabelaLoja] ([id])
+GO
+
+ALTER TABLE [dbo].[TabelaCadProduto] CHECK CONSTRAINT [FK_TabelaCadProduto_TabelaLoja]
+GO

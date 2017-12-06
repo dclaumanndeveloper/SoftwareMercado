@@ -444,7 +444,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(30, 38);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(312, 85);
+            this.dataGridView1.Size = new System.Drawing.Size(269, 85);
             this.dataGridView1.TabIndex = 32;
             // 
             // groupBox2
@@ -454,7 +454,7 @@
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Location = new System.Drawing.Point(122, 242);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(370, 167);
+            this.groupBox2.Size = new System.Drawing.Size(317, 167);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cadastro Codigo Barra";
@@ -463,7 +463,7 @@
             // 
             this.btnDeletarCodigoBarra.BackColor = System.Drawing.Color.Transparent;
             this.btnDeletarCodigoBarra.Image = ((System.Drawing.Image)(resources.GetObject("btnDeletarCodigoBarra.Image")));
-            this.btnDeletarCodigoBarra.Location = new System.Drawing.Point(310, 128);
+            this.btnDeletarCodigoBarra.Location = new System.Drawing.Point(267, 128);
             this.btnDeletarCodigoBarra.Name = "btnDeletarCodigoBarra";
             this.btnDeletarCodigoBarra.Size = new System.Drawing.Size(32, 32);
             this.btnDeletarCodigoBarra.TabIndex = 34;
@@ -473,7 +473,7 @@
             // 
             this.btnAdicionarCodigoBarra.BackColor = System.Drawing.Color.Transparent;
             this.btnAdicionarCodigoBarra.Image = ((System.Drawing.Image)(resources.GetObject("btnAdicionarCodigoBarra.Image")));
-            this.btnAdicionarCodigoBarra.Location = new System.Drawing.Point(263, 128);
+            this.btnAdicionarCodigoBarra.Location = new System.Drawing.Point(220, 128);
             this.btnAdicionarCodigoBarra.Name = "btnAdicionarCodigoBarra";
             this.btnAdicionarCodigoBarra.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarCodigoBarra.TabIndex = 33;
