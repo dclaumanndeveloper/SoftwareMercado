@@ -20,8 +20,24 @@ namespace RetaguardaTelas
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            FrmCadastroProduto frmConsultarProduto = new FrmCadastroProduto();
-            frmConsultarProduto.ShowDialog();
+            
+            bool _found = false;
+
+            foreach (Form _openForm in Application.OpenForms)
+            {
+                if (_openForm is FrmCadastroProduto)
+                {
+                    _openForm.Focus();
+
+                    _found = true;
+                }
+            }
+            if (!_found)
+            {
+                FrmCadastroProduto frmCadastroProduto = new FrmCadastroProduto();
+                frmCadastroProduto.MdiParent = this.ParentForm;
+                frmCadastroProduto.Show();
+            }
         }
     }
 }

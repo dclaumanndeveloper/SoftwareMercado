@@ -478,6 +478,7 @@
             this.btnAdicionarCodigoBarra.Size = new System.Drawing.Size(32, 32);
             this.btnAdicionarCodigoBarra.TabIndex = 33;
             this.btnAdicionarCodigoBarra.TabStop = false;
+            this.btnAdicionarCodigoBarra.Click += new System.EventHandler(this.btnAdicionarCodigoBarra_Click);
             this.btnAdicionarCodigoBarra.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnAdicionarCodigoBarra_MouseClick);
             this.btnAdicionarCodigoBarra.MouseLeave += new System.EventHandler(this.btnAdicionarCodigoBarra_MouseLeave);
             this.btnAdicionarCodigoBarra.MouseHover += new System.EventHandler(this.btnAdicionarCodigoBarra_MouseHover);

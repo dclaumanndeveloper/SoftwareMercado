@@ -89,11 +89,25 @@ namespace RetaguardaTelas
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmConsultarProduto frmConsultarProduto = new FrmConsultarProduto();
-            frmConsultarProduto.MdiParent = this;
-            frmConsultarProduto.Show();
-        }
+            bool _found = false;
 
+            foreach (Form _openForm in Application.OpenForms)
+            {
+                if (_openForm is FrmConsultarProduto)
+                {
+                    _openForm.Focus();
+
+                    _found = true;
+                }
+            }
+            if (!_found)
+            {
+                FrmConsultarProduto frmConsultarProduto = new FrmConsultarProduto();
+
+                frmConsultarProduto.MdiParent = this;
+                frmConsultarProduto.Show();
+            }
+        }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 

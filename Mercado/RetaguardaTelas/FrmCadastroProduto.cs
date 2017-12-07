@@ -38,5 +38,25 @@ namespace RetaguardaTelas
             btnAdicionarCodigoBarra.BackColor = Color.Fuchsia;
 
         }
+
+        private void btnAdicionarCodigoBarra_Click(object sender, EventArgs e)
+        {
+            bool _found = false;
+
+            foreach (Form _openForm in Application.OpenForms)
+            {
+                if (_openForm is FrmCadastroCodigoBarra)
+                {
+                    _openForm.Focus();
+
+                    _found = true;
+                }
+            }
+            if (!_found)
+            {
+                FrmCadastroCodigoBarra frmCadastroCodigoBarra = new FrmCadastroCodigoBarra();
+                frmCadastroCodigoBarra.ShowDialog();
+            }
+        }
     }
 }

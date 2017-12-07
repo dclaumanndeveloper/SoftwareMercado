@@ -36,12 +36,12 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSalvarBaixo = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnSalvarBaixo = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -117,37 +117,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Adicionar Codigo Barra";
             // 
-            // btnSalvarBaixo
+            // label4
             // 
-            this.btnSalvarBaixo.Location = new System.Drawing.Point(297, 228);
-            this.btnSalvarBaixo.Name = "btnSalvarBaixo";
-            this.btnSalvarBaixo.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarBaixo.TabIndex = 0;
-            this.btnSalvarBaixo.Text = "Salvar";
-            this.btnSalvarBaixo.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(262, 116);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(80, 20);
-            this.textBox3.TabIndex = 15;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(139, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(88, 20);
-            this.textBox2.TabIndex = 16;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Uni.Medida";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(259, 100);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 19;
+            this.label4.Text = "Peso";
             // 
             // label3
             // 
@@ -158,14 +135,37 @@
             this.label3.TabIndex = 18;
             this.label3.Text = "Qnt.Embalagem";
             // 
-            // label4
+            // label2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(259, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 19;
-            this.label4.Text = "Peso";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 100);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Uni.Medida";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(139, 116);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(88, 20);
+            this.textBox2.TabIndex = 16;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(262, 116);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(80, 20);
+            this.textBox3.TabIndex = 15;
+            // 
+            // btnSalvarBaixo
+            // 
+            this.btnSalvarBaixo.Location = new System.Drawing.Point(297, 228);
+            this.btnSalvarBaixo.Name = "btnSalvarBaixo";
+            this.btnSalvarBaixo.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarBaixo.TabIndex = 0;
+            this.btnSalvarBaixo.Text = "Salvar";
+            this.btnSalvarBaixo.UseVisualStyleBackColor = true;
             // 
             // FrmCadastroCodigoBarra
             // 
@@ -176,6 +176,7 @@
             this.Controls.Add(this.btnSalvarBaixo);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmCadastroCodigoBarra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro Codigo Barra";
