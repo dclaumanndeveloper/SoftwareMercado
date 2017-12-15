@@ -58,5 +58,10 @@ namespace RetaguardaTelas
                 frmCadastroCodigoBarra.ShowDialog();
             }
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Teste Ricardo");
+        }
     }
 }
