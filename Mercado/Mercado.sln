@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaDados", "CamadaDados\CamadaDados.csproj", "{04E6506C-7251-48AD-A1DC-42388D27E469}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dashboard", "C:\Users\Home\Downloads\Dashboard\Dashboard\Dashboard\Dashboard.csproj", "{DDACF7B1-143A-4D41-AE55-832248FE96C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CamadaViews", "C:\Users\Home\Downloads\Dashboard\Dashboard\Dashboard\CamadaViews.csproj", "{DDACF7B1-143A-4D41-AE55-832248FE96C0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
