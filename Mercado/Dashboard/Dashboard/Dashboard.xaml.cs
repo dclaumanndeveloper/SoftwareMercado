@@ -23,9 +23,6 @@ namespace Dashboard1
         public MainWindow()
         {
             InitializeComponent();
-
-            Consumo consumo = new Consumo();
-            DataContext = new ConsumoViewModel(consumo);
         }
 
         private void ButtonFechar_Click(object sender, RoutedEventArgs e)
@@ -38,34 +35,10 @@ namespace Dashboard1
             DragMove();
         }
 
-
-    }
-
-    internal class ConsumoViewModel
-    {
-        public List<Consumo> Consumo { get; private set; }
-
-        public ConsumoViewModel(Consumo consumo)
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            Consumo = new List<Consumo>();
-            Consumo.Add(consumo);
-        }
-    }
-
-    internal class Consumo
-    {
-        public string Titulo { get; private set; }
-        public int Porcentagem { get; private set; }
-
-        public Consumo()
-        {
-            Titulo = "Consumo Atual";
-            Porcentagem = CalcularPorcentagem();
-        }
-
-        private int CalcularPorcentagem()
-        {
-            return 47; //Calculo da porcentagem de consumo
+            FrmPesquisaProduto frmPesquisaProduto = new FrmPesquisaProduto();
+            frmPesquisaProduto.ShowDialog();
         }
     }
 }
