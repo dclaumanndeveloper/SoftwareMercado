@@ -45,11 +45,11 @@
         <Label Content="Tipo Mercadoria" HorizontalAlignment="Left" Margin="33,364,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="777,268,0,0" VerticalAlignment="Top" Width="235" IsReadOnly="True"/>
         <Label Content="Fornecedor" HorizontalAlignment="Left" Margin="777,296,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Aceita Multiplicação PDV" HorizontalAlignment="Left" Margin="415,413,0,0" VerticalAlignment="Top" Height="18"/>
+        <CheckBox Content="Aceita Multiplicação PDV" HorizontalAlignment="Left" Margin="474,413,0,0" VerticalAlignment="Top" Height="18"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="746,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper"/>
         <Label Content="Dias Venda" HorizontalAlignment="Left" Margin="749,165,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Pesavel" HorizontalAlignment="Left" Margin="415,434,0,0" VerticalAlignment="Top" Height="19"/>
-        <CheckBox Content="Venda Controlada" HorizontalAlignment="Left" Margin="415,457,0,0" VerticalAlignment="Top" Height="17"/>
+        <CheckBox Content="Pesavel" HorizontalAlignment="Left" Margin="474,434,0,0" VerticalAlignment="Top" Height="19"/>
+        <CheckBox Content="Venda Controlada" HorizontalAlignment="Left" Margin="474,457,0,0" VerticalAlignment="Top" Height="17"/>
         <ComboBox HorizontalAlignment="Left" Margin="478,268,0,0" VerticalAlignment="Top" Width="276" IsReadOnly="True"/>
         <Label Content="Comprador" HorizontalAlignment="Left" Margin="479,296,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="213,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper"/>
@@ -60,11 +60,26 @@
         <Label Content="Estoque Maximo" HorizontalAlignment="Left" Margin="499,364,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="651,336,0,0" VerticalAlignment="Top" Width="103" IsReadOnly="True" RenderTransformOrigin="0.508,0.607"/>
         <Label Content="Numero Loja" HorizontalAlignment="Left" Margin="653,364,0,0" VerticalAlignment="Top"/>
-        <CheckBox Content="Cotação" HorizontalAlignment="Left" Margin="415,476,0,0" VerticalAlignment="Top" Height="19"/>
-        <CheckBox Content="Permite Desconto" HorizontalAlignment="Left" Margin="415,495,0,0" VerticalAlignment="Top" Height="18"/>
+        <CheckBox Content="Cotação" HorizontalAlignment="Left" Margin="474,476,0,0" VerticalAlignment="Top" Height="19"/>
+        <CheckBox Content="Permite Desconto" HorizontalAlignment="Left" Margin="474,495,0,0" VerticalAlignment="Top" Height="18"/>
         <DataGrid HorizontalAlignment="Left" Height="100" Margin="33,413,0,0" VerticalAlignment="Top" Width="289"/>
         <DatePicker HorizontalAlignment="Left" Margin="623,209,0,0" VerticalAlignment="Top" Width="89"/>
         <Label Content="Nome Loja" HorizontalAlignment="Left" Margin="777,364,0,0" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="777,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="235" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" IsReadOnlyCaretVisible="True" IsEnabled="False"/>
+        <Button x:Name="btnSalvar1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,522,569">
+            <materialDesign:PackIcon Kind="ContentSave" Width="Auto" Height="Auto"/>
+        </Button>
+        <Button x:Name="btnCopy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,486,569">
+            <materialDesign:PackIcon Kind="ContentCopy" Width="Auto" Height="Auto"/>
+        </Button>
+        <Button x:Name="btnSalvar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,574,72,10">
+            <materialDesign:PackIcon Kind="ContentSave" Width="Auto" Height="Auto"/>
+        </Button>
+        <Button x:Name="btnSair" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,574,22,10">
+            <materialDesign:PackIcon Kind="ExitToApp" Width="Auto" Height="Auto"/>
+        </Button>
+        <Button x:Name="btnNovo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,557,569">
+            <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto"/>
+        </Button>
     </Grid>
 </Window>
