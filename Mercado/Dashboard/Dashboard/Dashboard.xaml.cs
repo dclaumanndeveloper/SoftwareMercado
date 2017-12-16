@@ -40,5 +40,11 @@ namespace Dashboard1
             FrmPesquisaProduto frmPesquisaProduto = new FrmPesquisaProduto();
             frmPesquisaProduto.ShowDialog();
         }
+
+        private void btnCadProduto_Click(object sender, RoutedEventArgs e)
+        {
+            FrmProduto frmProduto = new FrmProduto();
+            frmProduto.ShowDialog();
+        }
     }
 }

@@ -12,26 +12,26 @@
         <Grid x:Name="GridBarraTitulo_Copy" Background="#FF71C1D8" Margin="0,0,0,530" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0"/>
             <TextBlock Text="Pesquisa Produto Cadastrado" TextAlignment="Center" Foreground="#FFFDF2F2" FontSize="20" FontWeight="Bold"/>
-            <Button x:Name="btnAlteracaoLote_Copy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,121,806,-110">
+            <Button x:Name="btnAlteracaoLote_Copy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,144,1048,-133">
                 <materialDesign:PackIcon Kind="Barcode"/>
             </Button>
-            <Button x:Name="btnExport" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,434,-35">
-                <materialDesign:PackIcon Kind="Export" Width="Auto" Height="Auto"/>
+            <Button x:Name="btnExport" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,434,-35">
+                <materialDesign:PackIcon Kind="Export" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
-            <Button x:Name="btnEditar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,550,-35">
-                <materialDesign:PackIcon Kind="TableEdit" Width="Auto" Height="Auto"/>
+            <Button x:Name="btnEditar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,550,-35">
+                <materialDesign:PackIcon Kind="TableEdit" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
-            <Button x:Name="btnPrint" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,514,-35">
-                <materialDesign:PackIcon Kind="Printer" Width="Auto" Height="Auto"/>
+            <Button x:Name="btnPrint" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,514,-35">
+                <materialDesign:PackIcon Kind="Printer" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
-            <Button x:Name="btnAlteracaoLote" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="34" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,473,-35">
-                <materialDesign:PackIcon Kind="CheckboxMultipleMarked" Width="Auto" Height="Auto"/>
+            <Button x:Name="btnAlteracaoLote" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="34" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,473,-35">
+                <materialDesign:PackIcon Kind="CheckboxMultipleMarked" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
-            <Button x:Name="btnAdd" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,591,-35" Click="btnAdd_Click">
-                <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto"/>
+            <Button x:Name="btnAdd" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,591,-35" Click="btnAdd_Click">
+                <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
         </Grid>
-        <DataGrid Height="370" Margin="0,199,0,0" VerticalAlignment="Top">
+        <DataGrid x:Name="DataGridPesquisaProduto" Height="370" Margin="0,199,0,0" VerticalAlignment="Top">
             <DataGrid.ItemBindingGroup>
                 <BindingGroup/>
             </DataGrid.ItemBindingGroup>
@@ -42,19 +42,19 @@
                 <DataGridCheckBoxColumn x:Name="dgCheckBoxSeleciona" Header="Selecionar Tudo" CanUserResize="False"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DatePicker x:Name="txtDataFinal" HorizontalAlignment="Left" Margin="810,121,0,0" VerticalAlignment="Top" Width="94"/>
-        <Label Content="Codigo" HorizontalAlignment="Left" Margin="36,146,0,0" VerticalAlignment="Top"/>
-        <Label Content="Descrição" HorizontalAlignment="Left" Margin="289,146,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="txtDataFinal" HorizontalAlignment="Left" Margin="810,121,0,0" VerticalAlignment="Top" Width="94" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Label Content="Codigo" HorizontalAlignment="Left" Margin="56,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="310,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Inicial" HorizontalAlignment="Left" Margin="641,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Final" HorizontalAlignment="Left" Margin="810,146,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="956,118,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="956,118,0,0" VerticalAlignment="Top" Width="120" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Status" HorizontalAlignment="Left" Margin="959,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="33" Margin="40,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="txtCodigo_TextChanged" KeyDown="txtCodigo_KeyDown"/>
-        <DatePicker x:Name="txtDataInicial" HorizontalAlignment="Left" Margin="641,121,0,0" VerticalAlignment="Top" Width="97" DisplayDate="2017-12-15"/>
-        <Button x:Name="btnAlteracaoLote_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="23" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,119,1052,416">
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="33" Margin="40,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="txtCodigo_TextChanged" KeyDown="txtCodigo_KeyDown" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <DatePicker x:Name="txtDataInicial" HorizontalAlignment="Left" Margin="641,121,0,0" VerticalAlignment="Top" Width="97" DisplayDate="2017-12-15" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <Button x:Name="btnAlteracaoLote_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="23" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,139,801,396">
             <materialDesign:PackIcon Kind="Pencil"/>
         </Button>
-        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="33" Margin="293,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="33" Margin="293,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
 
     </Grid>
 </Window>

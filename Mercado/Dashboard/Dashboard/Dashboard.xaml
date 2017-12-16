@@ -164,9 +164,14 @@
             </Grid.Effect>
 
             <StackPanel Grid.Row="1">
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button x:Name="btnCadProduto" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD" Click="btnCadProduto_Click">
                     <Grid Width="150">
-                        <materialDesign:PackIcon Kind="Barcode" VerticalAlignment="Center"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125*"/>
+                            <ColumnDefinition Width="12*"/>
+                            <ColumnDefinition Width="13*"/>
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Kind="Barcode" VerticalAlignment="Center" Margin="0,0,0,1"/>
                         <TextBlock HorizontalAlignment="Left" Text="PRODUTOS" FontFamily="Champagne &amp; Limousines" Margin="47,0,0,0"/>
                     </Grid>
                 </Button>
