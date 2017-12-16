@@ -12,7 +12,7 @@
         <Grid x:Name="GridBarraTitulo_Copy" Background="#FF71C1D8" Margin="0,0,0,530" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0"/>
             <TextBlock Text="Pesquisa Produto Cadastrado" TextAlignment="Center" Foreground="#FFFDF2F2" FontSize="20" FontWeight="Bold"/>
-            <Button x:Name="btnAlteracaoLote_Copy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,144,1048,-133">
+            <Button x:Name="btnAlteracaoLote_Copy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="25" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,144,1043,-133">
                 <materialDesign:PackIcon Kind="Barcode"/>
             </Button>
             <Button x:Name="btnExport" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,46,434,-35">
@@ -43,18 +43,18 @@
             </DataGrid.Columns>
         </DataGrid>
         <DatePicker x:Name="txtDataFinal" HorizontalAlignment="Left" Margin="810,121,0,0" VerticalAlignment="Top" Width="94" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Label Content="Codigo" HorizontalAlignment="Left" Margin="56,146,0,0" VerticalAlignment="Top"/>
-        <Label Content="Descrição" HorizontalAlignment="Left" Margin="310,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Codigo" HorizontalAlignment="Left" Margin="52,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Descrição" HorizontalAlignment="Left" Margin="307,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Inicial" HorizontalAlignment="Left" Margin="641,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Final" HorizontalAlignment="Left" Margin="810,146,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="956,118,0,0" VerticalAlignment="Top" Width="120" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <ComboBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="956,121,0,0" VerticalAlignment="Top" Width="120" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="25"/>
         <Label Content="Status" HorizontalAlignment="Left" Margin="959,146,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="33" Margin="40,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="txtCodigo_TextChanged" KeyDown="txtCodigo_KeyDown" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="25" Margin="40,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="txtCodigo_TextChanged" KeyDown="txtCodigo_KeyDown" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <DatePicker x:Name="txtDataInicial" HorizontalAlignment="Left" Margin="641,121,0,0" VerticalAlignment="Top" Width="97" DisplayDate="2017-12-15" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Button x:Name="btnAlteracaoLote_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="23" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,139,801,396">
+        <Button x:Name="btnAlteracaoLote_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="23" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,139,792,396">
             <materialDesign:PackIcon Kind="Pencil"/>
         </Button>
-        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="33" Margin="293,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
+        <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="25" Margin="293,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
 
     </Grid>
 </Window>
