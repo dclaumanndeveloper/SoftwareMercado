@@ -70,9 +70,6 @@
         <Button x:Name="btnSalvar1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,509,569" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
             <materialDesign:PackIcon Kind="ContentSave" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
-        <Button x:Name="btnCopy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,473,569" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-            <materialDesign:PackIcon Kind="ContentCopy" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
-        </Button>
         <Button x:Name="btnSair" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,576,10,8">
             <materialDesign:PackIcon Kind="ExitToApp" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
@@ -109,6 +106,9 @@
         </Button>
         <Button x:Name="btnSalvar" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,576,60,8">
             <materialDesign:PackIcon Kind="ContentSave" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
+        </Button>
+        <Button x:Name="btnCopy" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,473,569" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+            <materialDesign:PackIcon Kind="ContentCopy" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
     </Grid>
 </Window>
