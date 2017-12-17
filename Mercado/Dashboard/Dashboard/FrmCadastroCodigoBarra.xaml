@@ -8,21 +8,21 @@
         mc:Ignorable="d"
         Title="Cadastro Codigo Barra" Background="#FFC4D1E8" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" Height="200" Width="537.594">
     <Grid>
-        <Rectangle Fill="#FFC4D1E8"  HorizontalAlignment="Left" Height="79" Margin="21,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="499"/>
+        <Rectangle Fill="#FFC4D1E8"  HorizontalAlignment="Left" Height="79" Margin="17,41,0,0" Stroke="Black" VerticalAlignment="Top" Width="499"/>
         <Button x:Name="btnsair" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,128,16,11">
             <materialDesign:PackIcon Kind="ExitToApp" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
-        <Label Content="Codigo Barra" HorizontalAlignment="Left" Margin="21,80,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="26,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
-        <Button x:Name="btnSalvar_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,128,70,11">
+        <Label Content="Codigo Barra" HorizontalAlignment="Left" Margin="28,80,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="26,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="209" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" TabIndex="1"/>
+        <Button x:Name="btnSalvar_Copy1" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,128,70,11" TabIndex="4">
             <materialDesign:PackIcon Kind="ContentSave" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
         <Button x:Name="btnAdicionarCodigo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,4,479,135">
             <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto"/>
         </Button>
-        <Label Content="Quant.Embalagem" HorizontalAlignment="Left" Margin="382,80,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="382,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108"/>
-        <ComboBox HorizontalAlignment="Left" Margin="262,52,0,0" VerticalAlignment="Top" Width="91"/>
-        <Label Content="Embalagem" HorizontalAlignment="Left" Margin="262,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Quant.Embalagem" HorizontalAlignment="Left" Margin="391,80,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="388,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" TabIndex="3"/>
+        <ComboBox HorizontalAlignment="Left" Margin="262,57,0,0" VerticalAlignment="Top" Width="91" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23" TabIndex="2"/>
+        <Label Content="Embalagem" HorizontalAlignment="Left" Margin="263,80,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
