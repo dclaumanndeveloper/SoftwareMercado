@@ -33,5 +33,11 @@ namespace Dashboard1
         {
            
         }
+
+        private void btnAdicionarCodigo_Click(object sender, RoutedEventArgs e)
+        {
+            FrmCadastroCodigoBarra frmCadastroCodigoBarra = new FrmCadastroCodigoBarra();
+            frmCadastroCodigoBarra.ShowDialog();
+        }
     }
 }

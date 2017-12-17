@@ -82,7 +82,7 @@
         <Button x:Name="btnNovo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,15,544,569" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
             <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
         </Button>
-        <Button x:Name="btnAdicionarCodigo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,536,343,48">
+        <Button x:Name="btnAdicionarCodigo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,536,343,48" Click="btnAdicionarCodigo_Click">
             <materialDesign:PackIcon Kind="FileDocument" Width="Auto" Height="Auto"/>
         </Button>
         <Button x:Name="btnDeletarCodigo" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right" Foreground="White" Margin="0,536,296,48">

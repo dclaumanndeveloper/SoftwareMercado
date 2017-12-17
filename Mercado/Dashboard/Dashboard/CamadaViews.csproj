@@ -75,6 +75,10 @@
       <DependentUpon>Dashboard.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="FrmCadastroCodigoBarra.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FrmPesquisaProduto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +89,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmCadastroCodigoBarra.xaml.cs">
+      <DependentUpon>FrmCadastroCodigoBarra.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FrmPesquisaProduto.xaml.cs">
       <DependentUpon>FrmPesquisaProduto.xaml</DependentUpon>
     </Compile>
