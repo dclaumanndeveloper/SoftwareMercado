@@ -17,7 +17,7 @@
         <Label Content="Descrição Completa" HorizontalAlignment="Left" Margin="342,96,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Descrição Nota" HorizontalAlignment="Left" Margin="749,96,0,0" VerticalAlignment="Top" Width="94"/>
         <ComboBox HorizontalAlignment="Left" Margin="749,211,0,0" VerticalAlignment="Top" Width="263" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
-        <DatePicker HorizontalAlignment="Left" Margin="886,143,0,0" VerticalAlignment="Top" Width="126" IsEnabled="False" SelectedDateFormat="Long" MouseEnter="DatePicker_MouseEnter" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="22"/>
+        <DatePicker HorizontalAlignment="Left" Margin="886,143,0,0" VerticalAlignment="Top" Width="126" IsEnabled="False" SelectedDateFormat="Long" MouseEnter="DatePicker_MouseEnter" Background="#FFECECD3" Height="22"/>
         <Label Content="Quant.Embalagem" HorizontalAlignment="Left" Margin="176,165,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="33,143,0,0" VerticalAlignment="Top" Width="108" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="22"/>
         <Label Content="Unidade Medida" HorizontalAlignment="Left" Margin="33,165,0,0" VerticalAlignment="Top"/>
@@ -25,25 +25,25 @@
         <Label Content="Setor" HorizontalAlignment="Left" Margin="324,165,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="33,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Custo Final" HorizontalAlignment="Left" Margin="33,296,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="316,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Label Content="Custo Venda" HorizontalAlignment="Left" Margin="322,296,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="316,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="#FFECECD3"/>
+        <Label Content="Custo Venda" HorizontalAlignment="Left" Margin="318,296,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Cadastro" HorizontalAlignment="Left" Margin="927,165,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="174,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="% Margem Lucro" HorizontalAlignment="Left" Margin="174,296,0,0" VerticalAlignment="Top" Width="118"/>
         <TextBox HorizontalAlignment="Left" Height="22" Margin="485,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Descrição Prateleira" HorizontalAlignment="Left" Margin="486,165,0,0" VerticalAlignment="Top"/>
-        <Label Content="Familia" HorizontalAlignment="Left" Margin="749,234,0,0" VerticalAlignment="Top"/>
+        <Label Content="Familia" HorizontalAlignment="Left" Margin="750,234,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="33,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="108" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Peso Liquido" HorizontalAlignment="Left" Margin="33,234,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="174,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Peso Bruto" HorizontalAlignment="Left" Margin="175,234,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="324,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Label Content="Largura Embalagem" HorizontalAlignment="Left" Margin="322,234,0,0" VerticalAlignment="Top"/>
+        <Label Content="Largura Embalagem" HorizontalAlignment="Left" Margin="325,234,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="485,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="112" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Altura Embalagem" HorizontalAlignment="Left" Margin="486,234,0,0" VerticalAlignment="Top"/>
         <Label Content="Validade" HorizontalAlignment="Left" Margin="625,234,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="33,341,0,0" VerticalAlignment="Top" Width="140" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
-        <Label Content="Tipo Mercadoria" HorizontalAlignment="Left" Margin="33,364,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tipo Mercadoria" HorizontalAlignment="Left" Margin="34,364,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="790,273,0,0" VerticalAlignment="Top" Width="222" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Fornecedor" HorizontalAlignment="Left" Margin="791,296,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Aceita Multiplicação PDV" HorizontalAlignment="Left" Margin="33,406,0,0" VerticalAlignment="Top" Height="18"/>
@@ -54,11 +54,11 @@
         <ComboBox HorizontalAlignment="Left" Margin="485,273,0,0" VerticalAlignment="Top" Width="266" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Comprador" HorizontalAlignment="Left" Margin="487,296,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="213,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Label Content="Estoque" HorizontalAlignment="Left" Margin="212,364,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estoque" HorizontalAlignment="Left" Margin="214,364,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="356,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Estoque Minimo" HorizontalAlignment="Left" Margin="355,364,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="500,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
-        <Label Content="Estoque Maximo" HorizontalAlignment="Left" Margin="499,364,0,0" VerticalAlignment="Top"/>
+        <Label Content="Estoque Maximo" HorizontalAlignment="Left" Margin="500,364,0,0" VerticalAlignment="Top"/>
         <ComboBox HorizontalAlignment="Left" Margin="651,341,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True" RenderTransformOrigin="0.508,0.607" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Numero Loja" HorizontalAlignment="Left" Margin="653,364,0,0" VerticalAlignment="Top"/>
         <CheckBox Content="Cotação" HorizontalAlignment="Left" Margin="571,409,0,0" VerticalAlignment="Top" Height="19"/>
