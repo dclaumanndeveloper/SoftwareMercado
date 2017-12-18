@@ -46,11 +46,11 @@
         <Label Content="Tipo Mercadoria" HorizontalAlignment="Left" Margin="34,364,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comBoxFornecedor" HorizontalAlignment="Left" Margin="790,273,0,0" VerticalAlignment="Top" Width="222" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Fornecedor" HorizontalAlignment="Left" Margin="791,296,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkBoxAceitaMultPdv" Content="Aceita Multiplicação PDV" HorizontalAlignment="Left" Margin="33,406,0,0" VerticalAlignment="Top" Height="18"/>
+        <CheckBox x:Name="checkBoxAceitaMultPdv" Content="Aceita Multiplicação PDV" HorizontalAlignment="Left" Margin="33,413,0,0" VerticalAlignment="Top" Height="18"/>
         <TextBox x:Name="txtDiaVenda" HorizontalAlignment="Left" Height="22" Margin="746,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Dias Venda" HorizontalAlignment="Left" Margin="749,165,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkBoxPesavel" Content="Pesavel" HorizontalAlignment="Left" Margin="212,405,0,0" VerticalAlignment="Top" Height="19"/>
-        <CheckBox x:Name="checkBoxVendaControlada" Content="Venda Controlada" HorizontalAlignment="Left" Margin="292,408,0,0" VerticalAlignment="Top" Height="17"/>
+        <CheckBox x:Name="checkBoxPesavel" Content="Pesavel" HorizontalAlignment="Left" Margin="206,413,0,0" VerticalAlignment="Top" Height="19"/>
+        <CheckBox x:Name="checkBoxVendaControlada" Content="Venda Controlada" HorizontalAlignment="Left" Margin="292,413,0,0" VerticalAlignment="Top" Height="17"/>
         <ComboBox x:Name="comBoxComprador" HorizontalAlignment="Left" Margin="485,273,0,0" VerticalAlignment="Top" Width="266" IsReadOnly="True" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Comprador" HorizontalAlignment="Left" Margin="487,296,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtEstoque" HorizontalAlignment="Left" Height="23" Margin="213,341,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="117" HorizontalContentAlignment="Left" VerticalContentAlignment="Bottom" TextAlignment="Center" CharacterCasing="Upper" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
@@ -61,8 +61,8 @@
         <Label Content="Estoque Maximo" HorizontalAlignment="Left" Margin="500,364,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comBoxNumLoja" HorizontalAlignment="Left" Margin="651,341,0,0" VerticalAlignment="Top" Width="100" IsReadOnly="True" RenderTransformOrigin="0.508,0.607" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="23"/>
         <Label Content="Numero Loja" HorizontalAlignment="Left" Margin="653,364,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="checkBoxCotacao" Content="Cotação" HorizontalAlignment="Left" Margin="571,409,0,0" VerticalAlignment="Top" Height="19"/>
-        <CheckBox x:Name="checkBoxPermiteDesc" Content="Permite Desconto" HorizontalAlignment="Left" Margin="429,408,0,0" VerticalAlignment="Top" Height="18"/>
+        <CheckBox x:Name="checkBoxCotacao" Content="Cotação" HorizontalAlignment="Left" Margin="571,413,0,0" VerticalAlignment="Top" Height="19"/>
+        <CheckBox x:Name="checkBoxPermiteDesc" Content="Permite Desconto" HorizontalAlignment="Left" Margin="433,413,0,0" VerticalAlignment="Top" Height="18"/>
         <DataGrid x:Name="dataGridCadastroCodigoBarra" HorizontalAlignment="Left" Height="100" Margin="653,434,0,0" VerticalAlignment="Top" Width="359"/>
         <DatePicker x:Name="datePickerValidade" HorizontalAlignment="Left" Margin="623,209,0,0" VerticalAlignment="Top" Width="89" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <Label Content="Nome Loja" HorizontalAlignment="Left" Margin="790,364,0,0" VerticalAlignment="Top" IsEnabled="False"/>
