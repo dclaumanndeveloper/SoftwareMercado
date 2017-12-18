@@ -43,7 +43,7 @@ namespace Dashboard1
 
         private void btnCadProduto_Click(object sender, RoutedEventArgs e)
         {
-            FrmProduto frmProduto = new FrmProduto();
+           FrmProduto frmProduto = new FrmProduto();
             frmProduto.ShowDialog();
         }
     }
