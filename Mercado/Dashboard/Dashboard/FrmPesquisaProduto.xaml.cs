@@ -42,8 +42,6 @@ namespace Dashboard1
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            FrmProduto frmProduto = new FrmProduto();
-            frmProduto.ShowDialog();
         }
     }
 }

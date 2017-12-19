@@ -79,6 +79,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="FrmCadastroUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FrmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FrmPesquisaProduto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,6 +99,12 @@
   <ItemGroup>
     <Compile Include="FrmCadastroCodigoBarra.xaml.cs">
       <DependentUpon>FrmCadastroCodigoBarra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCadastroUsuario.xaml.cs">
+      <DependentUpon>FrmCadastroUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.xaml.cs">
+      <DependentUpon>FrmLogin.xaml</DependentUpon>
     </Compile>
     <Compile Include="FrmPesquisaProduto.xaml.cs">
       <DependentUpon>FrmPesquisaProduto.xaml</DependentUpon>

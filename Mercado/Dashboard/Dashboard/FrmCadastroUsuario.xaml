@@ -1,0 +1,48 @@
+﻿<Window x:Class="Dashboard1.FrmCadastroUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard1"
+        mc:Ignorable="d"
+        Title="Cadastro Usuario" Height="489.473" Width="684.587" Background="#FFC4D1E8" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+    <Grid>
+        <TabControl HorizontalAlignment="Left" Height="365" Margin="10,56,0,0" VerticalAlignment="Top" Width="659">
+            <TabItem Header="Dados Usuario">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="txtCode" HorizontalAlignment="Left" Height="28" Margin="23,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"/>
+                    <Label Content="Code" HorizontalAlignment="Left" Margin="23,61,0,0" VerticalAlignment="Top" Height="32" Width="41"/>
+                    <ComboBox x:Name="comBoxLoja" HorizontalAlignment="Left" Margin="516,110,0,0" VerticalAlignment="Top" Width="106" Height="31"/>
+                    <ComboBox x:Name="comBoxSetorUsuario" HorizontalAlignment="Left" Margin="325,106,0,0" VerticalAlignment="Top" Width="167" Height="35"/>
+                    <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="28" Margin="173,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="319"/>
+                    <Label Content="Nome" HorizontalAlignment="Left" Margin="173,61,0,0" VerticalAlignment="Top" Width="60" Height="32"/>
+                    <PasswordBox x:Name="txtConfirmarSenha" HorizontalAlignment="Left" Margin="173,110,0,0" VerticalAlignment="Top" Width="113" Height="31"/>
+                    <PasswordBox x:Name="txtSenha" HorizontalAlignment="Left" Margin="23,110,0,0" VerticalAlignment="Top" Width="113" Height="31"/>
+                    <Label Content="Senha" HorizontalAlignment="Left" Margin="23,141,0,0" VerticalAlignment="Top" Width="93" Height="32"/>
+                    <Label Content="Confirmar Senha" HorizontalAlignment="Left" Margin="173,141,0,0" VerticalAlignment="Top" Width="109" Height="33"/>
+                    <Label Content="Setor" HorizontalAlignment="Left" Margin="325,141,0,0" VerticalAlignment="Top" Width="93" Height="33"/>
+                    <Label Content="Loja" HorizontalAlignment="Left" Margin="516,141,0,0" VerticalAlignment="Top" Width="92" Height="32"/>
+                    <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Height="28" Margin="516,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113"/>
+                    <Label Content="Login" HorizontalAlignment="Left" Margin="516,61,0,0" VerticalAlignment="Top" Height="32" Width="41"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Permissão">
+                <Grid Background="#FFE5E5E5">
+                    <TreeView HorizontalAlignment="Left" Height="317" Margin="10,10,0,0" VerticalAlignment="Top" Width="633">
+                        <CheckBox  IsThreeState="True" Content="Cadastro Produto"/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                        <CheckBox/>
+                    </TreeView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

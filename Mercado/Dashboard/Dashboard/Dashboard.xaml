@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Dashboard1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:MetroChart="clr-namespace:De.TorstenMandelkow.MetroChart;assembly=De.TorstenMandelkow.MetroChart"
-        mc:Ignorable="d" WindowState="Maximized"  WindowStartupLocation="CenterScreen" >
+        mc:Ignorable="d" WindowState="Maximized"  WindowStartupLocation="CenterScreen" Height="639.8" >
 
     <Window.Resources>
         <ResourceDictionary>
@@ -105,7 +105,7 @@
                 <RowDefinition Height="19*"/>
                 <RowDefinition Height="139*"/>
             </Grid.RowDefinitions>
-            <ScrollViewer Grid.RowSpan="2">
+            <ScrollViewer Grid.RowSpan="2" Margin="0,1,0,-1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="150"/>
@@ -176,14 +176,14 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button x:Name="btnUsuario" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Account" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="USUARIOS" FontFamily="Champagne &amp; Limousines"/>
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button x:Name="btnFornecedor" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="TruckDelivery" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="FORNECEDORES" FontFamily="Champagne &amp; Limousines" Height="17" Margin="23,0,10,0" VerticalAlignment="Bottom" Width="117"/>
@@ -218,7 +218,7 @@
                     </Grid>
                 </Button>
 
-                <Button Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
+                <Button x:Name="btnConfiguracao" Margin="10" Background="#FF8522BD" BorderBrush="#FF8522BD">
                     <Grid Width="150">
                         <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center"/>
                         <TextBlock HorizontalAlignment="Center" Text="CONFIGURAÇÕES" FontFamily="Champagne &amp; Limousines"/>
