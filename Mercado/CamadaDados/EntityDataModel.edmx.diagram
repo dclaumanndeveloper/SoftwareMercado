@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="74a89c1d93ab4454a8b2f2f6dcf05398" Name="Diagram1">
+        <EntityTypeShape EntityType="DataBaseMercadoModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaCadProduto" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaCadUsuario" Width="2.25" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaComprador" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaFamiliaProduto" Width="1.5" PointX="3.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaFornecedor" Width="1.5" PointX="3.625" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaLoja" Width="1.5" PointX="0.625" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaMercadoria" Width="1.5" PointX="3.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaSetorProduto" Width="1.5" PointX="3.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaSetorUsuario" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaSituacaoCadastro" Width="2.125" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataBaseMercadoModel.TabelaUnidadeMedida" Width="1.5" PointX="3.75" PointY="17.875" IsExpanded="true" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_Cadproduto_tipoFamiliaProduto" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_Cadproduto_tipoMercadoria" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_Cadproduto_tipoSetor" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_Cadproduto_tipoUnidadeMedida" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadProduto_TabelaComprador" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadProduto_TabelaFornecedor" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadProduto_TabelaLoja" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadUsuario_TabelaLoja1" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadUsuario_TabelaSetorUsuario" ManuallyRouted="false" />
+        <AssociationConnector Association="DataBaseMercadoModel.FK_TabelaCadUsuario_TabelaSituacaoCadastro" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

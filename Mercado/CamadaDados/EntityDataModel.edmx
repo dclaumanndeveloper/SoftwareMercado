@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataBaseMercadoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TabelaCadProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoBarra" Type="varchar" MaxLength="50" />
+          <Property Name="descricaoCompleta" Type="varchar" MaxLength="60" />
+          <Property Name="qtdEmbalagem" Type="int" />
+          <Property Name="ID_unidadeMedida" Type="int" />
+          <Property Name="ID_sectorProduto" Type="int" />
+          <Property Name="custoFinal" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="custoVenda" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="ID_familiaProduto" Type="int" />
+          <Property Name="descricaoNota" Type="varchar" MaxLength="22" />
+          <Property Name="pesoLiquido" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="dataCadastro" Type="datetime" />
+          <Property Name="validade" Type="date" />
+          <Property Name="pesoBruto" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="larguraEmbalagem" Type="int" />
+          <Property Name="alturaEmbalagem" Type="int" />
+          <Property Name="margemLucro" Type="decimal" Precision="11" Scale="2" />
+          <Property Name="dataAlteracao" Type="datetime" />
+          <Property Name="ID_tipoMercadoria" Type="int" />
+          <Property Name="aceitaMultiplicacaoPdv" Type="bit" />
+          <Property Name="ID_fornecedor" Type="int" />
+          <Property Name="diasDeVendas" Type="int" />
+          <Property Name="pesavel" Type="bit" />
+          <Property Name="vendaControlada" Type="bit" />
+          <Property Name="ID_Comprador" Type="int" />
+          <Property Name="vendaPdv" Type="bit" />
+          <Property Name="estoque" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="abaixoMinimo" Type="bit" />
+          <Property Name="quantEmbalagem" Type="int" />
+          <Property Name="ID_Loja" Type="int" />
+          <Property Name="cotacao" Type="bit" />
+          <Property Name="permiteDesconto" Type="bit" />
+        </EntityType>
+        <EntityType Name="TabelaCadUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="login" Type="varchar" MaxLength="20" />
+          <Property Name="nome" Type="varchar" MaxLength="30" />
+          <Property Name="senha" Type="varchar" MaxLength="15" />
+          <Property Name="id_tipoSetorUsuario" Type="int" />
+          <Property Name="id_situacaocadastro" Type="int" />
+          <Property Name="id_loja" Type="int" />
+          <Property Name="datahoraultimoacesso" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TabelaComprador">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaFamiliaProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaFornecedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaLoja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaMercadoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TabelaSetorProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaSetorUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="TabelaSituacaoCadastro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TabelaUnidadeMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Cadproduto_tipoFamiliaProduto">
+          <End Role="TabelaFamiliaProduto" Type="Self.TabelaFamiliaProduto" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaFamiliaProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_familiaProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoMercadoria">
+          <End Role="TabelaMercadoria" Type="Self.TabelaMercadoria" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaMercadoria">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_tipoMercadoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoSetor">
+          <End Role="TabelaSetorProduto" Type="Self.TabelaSetorProduto" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSetorProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_sectorProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoUnidadeMedida">
+          <End Role="TabelaUnidadeMedida" Type="Self.TabelaUnidadeMedida" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaUnidadeMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_unidadeMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaComprador">
+          <End Role="TabelaComprador" Type="Self.TabelaComprador" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaComprador">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_Comprador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaFornecedor">
+          <End Role="TabelaFornecedor" Type="Self.TabelaFornecedor" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaFornecedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaLoja">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_Loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaLoja">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaLoja1">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaLoja2">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSetorUsuario">
+          <End Role="TabelaSetorUsuario" Type="Self.TabelaSetorUsuario" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSetorUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_tipoSetorUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro">
+          <End Role="TabelaSituacaoCadastro" Type="Self.TabelaSituacaoCadastro" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSituacaoCadastro">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_situacaocadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro1">
+          <End Role="TabelaSituacaoCadastro" Type="Self.TabelaSituacaoCadastro" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSituacaoCadastro">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_situacaocadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro2">
+          <End Role="TabelaSituacaoCadastro" Type="Self.TabelaSituacaoCadastro" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSituacaoCadastro">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_situacaocadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DataBaseMercadoModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaCadProduto" EntityType="Self.TabelaCadProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaCadUsuario" EntityType="Self.TabelaCadUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaComprador" EntityType="Self.TabelaComprador" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaFamiliaProduto" EntityType="Self.TabelaFamiliaProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaFornecedor" EntityType="Self.TabelaFornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaLoja" EntityType="Self.TabelaLoja" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaMercadoria" EntityType="Self.TabelaMercadoria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaSetorProduto" EntityType="Self.TabelaSetorProduto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaSetorUsuario" EntityType="Self.TabelaSetorUsuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaSituacaoCadastro" EntityType="Self.TabelaSituacaoCadastro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TabelaUnidadeMedida" EntityType="Self.TabelaUnidadeMedida" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cadproduto_tipoFamiliaProduto" Association="Self.FK_Cadproduto_tipoFamiliaProduto">
+            <End Role="TabelaFamiliaProduto" EntitySet="TabelaFamiliaProduto" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoMercadoria" Association="Self.FK_Cadproduto_tipoMercadoria">
+            <End Role="TabelaMercadoria" EntitySet="TabelaMercadoria" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoSetor" Association="Self.FK_Cadproduto_tipoSetor">
+            <End Role="TabelaSetorProduto" EntitySet="TabelaSetorProduto" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoUnidadeMedida" Association="Self.FK_Cadproduto_tipoUnidadeMedida">
+            <End Role="TabelaUnidadeMedida" EntitySet="TabelaUnidadeMedida" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaComprador" Association="Self.FK_TabelaCadProduto_TabelaComprador">
+            <End Role="TabelaComprador" EntitySet="TabelaComprador" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaFornecedor" Association="Self.FK_TabelaCadProduto_TabelaFornecedor">
+            <End Role="TabelaFornecedor" EntitySet="TabelaFornecedor" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaLoja" Association="Self.FK_TabelaCadProduto_TabelaLoja">
+            <End Role="TabelaLoja" EntitySet="TabelaLoja" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProduto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaLoja" Association="Self.FK_TabelaCadUsuario_TabelaLoja">
+            <End Role="TabelaLoja" EntitySet="TabelaLoja" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaLoja1" Association="Self.FK_TabelaCadUsuario_TabelaLoja1">
+            <End Role="TabelaLoja" EntitySet="TabelaLoja" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaLoja2" Association="Self.FK_TabelaCadUsuario_TabelaLoja2">
+            <End Role="TabelaLoja" EntitySet="TabelaLoja" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSetorUsuario" Association="Self.FK_TabelaCadUsuario_TabelaSetorUsuario">
+            <End Role="TabelaSetorUsuario" EntitySet="TabelaSetorUsuario" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro" Association="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro">
+            <End Role="TabelaSituacaoCadastro" EntitySet="TabelaSituacaoCadastro" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro1" Association="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro1">
+            <End Role="TabelaSituacaoCadastro" EntitySet="TabelaSituacaoCadastro" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro2" Association="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro2">
+            <End Role="TabelaSituacaoCadastro" EntitySet="TabelaSituacaoCadastro" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataBaseMercadoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TabelaCadProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoBarra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descricaoCompleta" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="qtdEmbalagem" Type="Int32" />
+          <Property Name="ID_unidadeMedida" Type="Int32" />
+          <Property Name="ID_sectorProduto" Type="Int32" />
+          <Property Name="custoFinal" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="custoVenda" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="ID_familiaProduto" Type="Int32" />
+          <Property Name="descricaoNota" Type="String" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="pesoLiquido" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="dataCadastro" Type="DateTime" Precision="3" />
+          <Property Name="validade" Type="DateTime" Precision="0" />
+          <Property Name="pesoBruto" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="larguraEmbalagem" Type="Int32" />
+          <Property Name="alturaEmbalagem" Type="Int32" />
+          <Property Name="margemLucro" Type="Decimal" Precision="11" Scale="2" />
+          <Property Name="dataAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="ID_tipoMercadoria" Type="Int32" />
+          <Property Name="aceitaMultiplicacaoPdv" Type="Boolean" />
+          <Property Name="ID_fornecedor" Type="Int32" />
+          <Property Name="diasDeVendas" Type="Int32" />
+          <Property Name="pesavel" Type="Boolean" />
+          <Property Name="vendaControlada" Type="Boolean" />
+          <Property Name="ID_Comprador" Type="Int32" />
+          <Property Name="vendaPdv" Type="Boolean" />
+          <Property Name="estoque" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="abaixoMinimo" Type="Boolean" />
+          <Property Name="quantEmbalagem" Type="Int32" />
+          <Property Name="ID_Loja" Type="Int32" />
+          <Property Name="cotacao" Type="Boolean" />
+          <Property Name="permiteDesconto" Type="Boolean" />
+          <NavigationProperty Name="TabelaFamiliaProduto" Relationship="Self.FK_Cadproduto_tipoFamiliaProduto" FromRole="TabelaCadProduto" ToRole="TabelaFamiliaProduto" />
+          <NavigationProperty Name="TabelaMercadoria" Relationship="Self.FK_Cadproduto_tipoMercadoria" FromRole="TabelaCadProduto" ToRole="TabelaMercadoria" />
+          <NavigationProperty Name="TabelaSetorProduto" Relationship="Self.FK_Cadproduto_tipoSetor" FromRole="TabelaCadProduto" ToRole="TabelaSetorProduto" />
+          <NavigationProperty Name="TabelaUnidadeMedida" Relationship="Self.FK_Cadproduto_tipoUnidadeMedida" FromRole="TabelaCadProduto" ToRole="TabelaUnidadeMedida" />
+          <NavigationProperty Name="TabelaComprador" Relationship="Self.FK_TabelaCadProduto_TabelaComprador" FromRole="TabelaCadProduto" ToRole="TabelaComprador" />
+          <NavigationProperty Name="TabelaFornecedor" Relationship="Self.FK_TabelaCadProduto_TabelaFornecedor" FromRole="TabelaCadProduto" ToRole="TabelaFornecedor" />
+          <NavigationProperty Name="TabelaLoja" Relationship="Self.FK_TabelaCadProduto_TabelaLoja" FromRole="TabelaCadProduto" ToRole="TabelaLoja" />
+        </EntityType>
+        <EntityType Name="TabelaCadUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nome" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="senha" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="id_tipoSetorUsuario" Type="Int32" />
+          <Property Name="id_situacaocadastro" Type="Int32" />
+          <Property Name="id_loja" Type="Int32" />
+          <Property Name="datahoraultimoacesso" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TabelaSetorUsuario" Relationship="Self.FK_TabelaCadUsuario_TabelaSetorUsuario" FromRole="TabelaCadUsuario" ToRole="TabelaSetorUsuario" />
+          <NavigationProperty Name="TabelaSituacaoCadastro" Relationship="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro" FromRole="TabelaCadUsuario" ToRole="TabelaSituacaoCadastro" />
+        </EntityType>
+        <EntityType Name="TabelaComprador">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_TabelaCadProduto_TabelaComprador" FromRole="TabelaComprador" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <EntityType Name="TabelaFamiliaProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_Cadproduto_tipoFamiliaProduto" FromRole="TabelaFamiliaProduto" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <EntityType Name="TabelaFornecedor">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_TabelaCadProduto_TabelaFornecedor" FromRole="TabelaFornecedor" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <EntityType Name="TabelaLoja">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_TabelaCadProduto_TabelaLoja" FromRole="TabelaLoja" ToRole="TabelaCadProduto" />
+          <NavigationProperty Name="TabelaCadUsuarios1" Relationship="Self.FK_TabelaCadUsuario_TabelaLoja1" FromRole="TabelaLoja" ToRole="TabelaCadUsuario" />
+        </EntityType>
+        <EntityType Name="TabelaMercadoria">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_Cadproduto_tipoMercadoria" FromRole="TabelaMercadoria" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <EntityType Name="TabelaSetorProduto">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_Cadproduto_tipoSetor" FromRole="TabelaSetorProduto" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <EntityType Name="TabelaSetorUsuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadUsuarios" Relationship="Self.FK_TabelaCadUsuario_TabelaSetorUsuario" FromRole="TabelaSetorUsuario" ToRole="TabelaCadUsuario" />
+        </EntityType>
+        <EntityType Name="TabelaSituacaoCadastro">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descricao" Type="Boolean" />
+          <NavigationProperty Name="TabelaCadUsuarios" Relationship="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro" FromRole="TabelaSituacaoCadastro" ToRole="TabelaCadUsuario" />
+        </EntityType>
+        <EntityType Name="TabelaUnidadeMedida">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TabelaCadProdutoes" Relationship="Self.FK_Cadproduto_tipoUnidadeMedida" FromRole="TabelaUnidadeMedida" ToRole="TabelaCadProduto" />
+        </EntityType>
+        <Association Name="FK_Cadproduto_tipoFamiliaProduto">
+          <End Role="TabelaFamiliaProduto" Type="Self.TabelaFamiliaProduto" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaFamiliaProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_familiaProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoMercadoria">
+          <End Role="TabelaMercadoria" Type="Self.TabelaMercadoria" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaMercadoria">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_tipoMercadoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoSetor">
+          <End Role="TabelaSetorProduto" Type="Self.TabelaSetorProduto" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSetorProduto">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_sectorProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cadproduto_tipoUnidadeMedida">
+          <End Role="TabelaUnidadeMedida" Type="Self.TabelaUnidadeMedida" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaUnidadeMedida">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_unidadeMedida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaComprador">
+          <End Role="TabelaComprador" Type="Self.TabelaComprador" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaComprador">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_Comprador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaFornecedor">
+          <End Role="TabelaFornecedor" Type="Self.TabelaFornecedor" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaFornecedor">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_fornecedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadProduto_TabelaLoja">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadProduto" Type="Self.TabelaCadProduto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadProduto">
+              <PropertyRef Name="ID_Loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaLoja1">
+          <End Role="TabelaLoja" Type="Self.TabelaLoja" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaLoja">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_loja" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSetorUsuario">
+          <End Role="TabelaSetorUsuario" Type="Self.TabelaSetorUsuario" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSetorUsuario">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_tipoSetorUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro">
+          <End Role="TabelaSituacaoCadastro" Type="Self.TabelaSituacaoCadastro" Multiplicity="0..1" />
+          <End Role="TabelaCadUsuario" Type="Self.TabelaCadUsuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TabelaSituacaoCadastro">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TabelaCadUsuario">
+              <PropertyRef Name="id_situacaocadastro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="dbMercadoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TabelaCadProdutoes" EntityType="Self.TabelaCadProduto" />
+          <EntitySet Name="TabelaCadUsuarios" EntityType="Self.TabelaCadUsuario" />
+          <EntitySet Name="TabelaCompradors" EntityType="Self.TabelaComprador" />
+          <EntitySet Name="TabelaFamiliaProdutoes" EntityType="Self.TabelaFamiliaProduto" />
+          <EntitySet Name="TabelaFornecedors" EntityType="Self.TabelaFornecedor" />
+          <EntitySet Name="TabelaLojas" EntityType="Self.TabelaLoja" />
+          <EntitySet Name="TabelaMercadorias" EntityType="Self.TabelaMercadoria" />
+          <EntitySet Name="TabelaSetorProdutoes" EntityType="Self.TabelaSetorProduto" />
+          <EntitySet Name="TabelaSetorUsuarios" EntityType="Self.TabelaSetorUsuario" />
+          <EntitySet Name="TabelaSituacaoCadastroes" EntityType="Self.TabelaSituacaoCadastro" />
+          <EntitySet Name="TabelaUnidadeMedidas" EntityType="Self.TabelaUnidadeMedida" />
+          <AssociationSet Name="FK_Cadproduto_tipoFamiliaProduto" Association="Self.FK_Cadproduto_tipoFamiliaProduto">
+            <End Role="TabelaFamiliaProduto" EntitySet="TabelaFamiliaProdutoes" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoMercadoria" Association="Self.FK_Cadproduto_tipoMercadoria">
+            <End Role="TabelaMercadoria" EntitySet="TabelaMercadorias" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoSetor" Association="Self.FK_Cadproduto_tipoSetor">
+            <End Role="TabelaSetorProduto" EntitySet="TabelaSetorProdutoes" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cadproduto_tipoUnidadeMedida" Association="Self.FK_Cadproduto_tipoUnidadeMedida">
+            <End Role="TabelaUnidadeMedida" EntitySet="TabelaUnidadeMedidas" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaComprador" Association="Self.FK_TabelaCadProduto_TabelaComprador">
+            <End Role="TabelaComprador" EntitySet="TabelaCompradors" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaFornecedor" Association="Self.FK_TabelaCadProduto_TabelaFornecedor">
+            <End Role="TabelaFornecedor" EntitySet="TabelaFornecedors" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadProduto_TabelaLoja" Association="Self.FK_TabelaCadProduto_TabelaLoja">
+            <End Role="TabelaLoja" EntitySet="TabelaLojas" />
+            <End Role="TabelaCadProduto" EntitySet="TabelaCadProdutoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaLoja1" Association="Self.FK_TabelaCadUsuario_TabelaLoja1">
+            <End Role="TabelaLoja" EntitySet="TabelaLojas" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSetorUsuario" Association="Self.FK_TabelaCadUsuario_TabelaSetorUsuario">
+            <End Role="TabelaSetorUsuario" EntitySet="TabelaSetorUsuarios" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TabelaCadUsuario_TabelaSituacaoCadastro" Association="Self.FK_TabelaCadUsuario_TabelaSituacaoCadastro">
+            <End Role="TabelaSituacaoCadastro" EntitySet="TabelaSituacaoCadastroes" />
+            <End Role="TabelaCadUsuario" EntitySet="TabelaCadUsuarios" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataBaseMercadoModelStoreContainer" CdmEntityContainer="dbMercadoEntities">
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaCadProdutoes">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaCadProduto">
+              <MappingFragment StoreEntitySet="TabelaCadProduto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="codigoBarra" ColumnName="codigoBarra" />
+                <ScalarProperty Name="descricaoCompleta" ColumnName="descricaoCompleta" />
+                <ScalarProperty Name="qtdEmbalagem" ColumnName="qtdEmbalagem" />
+                <ScalarProperty Name="ID_unidadeMedida" ColumnName="ID_unidadeMedida" />
+                <ScalarProperty Name="ID_sectorProduto" ColumnName="ID_sectorProduto" />
+                <ScalarProperty Name="custoFinal" ColumnName="custoFinal" />
+                <ScalarProperty Name="custoVenda" ColumnName="custoVenda" />
+                <ScalarProperty Name="ID_familiaProduto" ColumnName="ID_familiaProduto" />
+                <ScalarProperty Name="descricaoNota" ColumnName="descricaoNota" />
+                <ScalarProperty Name="pesoLiquido" ColumnName="pesoLiquido" />
+                <ScalarProperty Name="dataCadastro" ColumnName="dataCadastro" />
+                <ScalarProperty Name="validade" ColumnName="validade" />
+                <ScalarProperty Name="pesoBruto" ColumnName="pesoBruto" />
+                <ScalarProperty Name="larguraEmbalagem" ColumnName="larguraEmbalagem" />
+                <ScalarProperty Name="alturaEmbalagem" ColumnName="alturaEmbalagem" />
+                <ScalarProperty Name="margemLucro" ColumnName="margemLucro" />
+                <ScalarProperty Name="dataAlteracao" ColumnName="dataAlteracao" />
+                <ScalarProperty Name="ID_tipoMercadoria" ColumnName="ID_tipoMercadoria" />
+                <ScalarProperty Name="aceitaMultiplicacaoPdv" ColumnName="aceitaMultiplicacaoPdv" />
+                <ScalarProperty Name="ID_fornecedor" ColumnName="ID_fornecedor" />
+                <ScalarProperty Name="diasDeVendas" ColumnName="diasDeVendas" />
+                <ScalarProperty Name="pesavel" ColumnName="pesavel" />
+                <ScalarProperty Name="vendaControlada" ColumnName="vendaControlada" />
+                <ScalarProperty Name="ID_Comprador" ColumnName="ID_Comprador" />
+                <ScalarProperty Name="vendaPdv" ColumnName="vendaPdv" />
+                <ScalarProperty Name="estoque" ColumnName="estoque" />
+                <ScalarProperty Name="abaixoMinimo" ColumnName="abaixoMinimo" />
+                <ScalarProperty Name="quantEmbalagem" ColumnName="quantEmbalagem" />
+                <ScalarProperty Name="ID_Loja" ColumnName="ID_Loja" />
+                <ScalarProperty Name="cotacao" ColumnName="cotacao" />
+                <ScalarProperty Name="permiteDesconto" ColumnName="permiteDesconto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaCadUsuarios">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaCadUsuario">
+              <MappingFragment StoreEntitySet="TabelaCadUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+                <ScalarProperty Name="id_tipoSetorUsuario" ColumnName="id_tipoSetorUsuario" />
+                <ScalarProperty Name="id_situacaocadastro" ColumnName="id_situacaocadastro" />
+                <ScalarProperty Name="id_loja" ColumnName="id_loja" />
+                <ScalarProperty Name="datahoraultimoacesso" ColumnName="datahoraultimoacesso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaCompradors">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaComprador">
+              <MappingFragment StoreEntitySet="TabelaComprador">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaFamiliaProdutoes">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaFamiliaProduto">
+              <MappingFragment StoreEntitySet="TabelaFamiliaProduto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaFornecedors">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaFornecedor">
+              <MappingFragment StoreEntitySet="TabelaFornecedor">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaLojas">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaLoja">
+              <MappingFragment StoreEntitySet="TabelaLoja">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaMercadorias">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaMercadoria">
+              <MappingFragment StoreEntitySet="TabelaMercadoria">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaSetorProdutoes">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaSetorProduto">
+              <MappingFragment StoreEntitySet="TabelaSetorProduto">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaSetorUsuarios">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaSetorUsuario">
+              <MappingFragment StoreEntitySet="TabelaSetorUsuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaSituacaoCadastroes">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaSituacaoCadastro">
+              <MappingFragment StoreEntitySet="TabelaSituacaoCadastro">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TabelaUnidadeMedidas">
+            <EntityTypeMapping TypeName="DataBaseMercadoModel.TabelaUnidadeMedida">
+              <MappingFragment StoreEntitySet="TabelaUnidadeMedida">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

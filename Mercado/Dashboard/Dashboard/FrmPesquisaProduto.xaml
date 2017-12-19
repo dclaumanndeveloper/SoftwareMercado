@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="Dashboard1.FrmPesquisaProduto"
         mc:Ignorable="d"
     
-        Title="" Height="600" Width="1115.187" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+        Title="" Height="600" Width="1115.187" WindowStartupLocation="CenterScreen" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" Loaded="Window_Loaded">
     <Grid Grid.Column="1" Grid.Row="1" Background="#FFC4D1E8">
         <Grid x:Name="GridBarraTitulo" Background="#FF71C1D8" Margin="0,0,0,530" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10,0"/>
@@ -34,13 +34,10 @@
                 <materialDesign:PackIcon Kind="AccountSearch" Width="Auto" Height="Auto" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}"/>
             </Button>
         </Grid>
-        <DataGrid x:Name="DataGridPesquisaProduto" Margin="0,199,0,0" VerticalAlignment="Top" Height="338">
+        <DataGrid x:Name="DataGridPesquisaProduto" ItemsSource="{Binding}" Margin="0,199,0,0" VerticalAlignment="Top" Height="338" IsReadOnly="True">
             <DataGrid.ItemBindingGroup>
                 <BindingGroup/>
             </DataGrid.ItemBindingGroup>
-            <DataGrid.ContextMenu>
-                <ContextMenu/>
-            </DataGrid.ContextMenu>
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn x:Name="dgCheckBoxSeleciona" Header="Selecionar Tudo" CanUserResize="False"/>
             </DataGrid.Columns>
@@ -50,8 +47,8 @@
         <Label Content="Descrição" HorizontalAlignment="Left" Margin="307,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Inicial" HorizontalAlignment="Left" Margin="641,146,0,0" VerticalAlignment="Top"/>
         <Label Content="Data Final" HorizontalAlignment="Left" Margin="810,146,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbStatus" HorizontalAlignment="Left" Margin="956,121,0,0" VerticalAlignment="Top" Width="120" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="25"/>
-        <Label Content="Status" HorizontalAlignment="Left" Margin="959,146,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbSituacao" HorizontalAlignment="Left" Margin="956,121,0,0" VerticalAlignment="Top" Width="120" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" Height="25"/>
+        <Label Content="Situação" HorizontalAlignment="Left" Margin="959,146,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="25" Margin="40,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="198" TextChanged="txtCodigo_TextChanged" KeyDown="txtCodigo_KeyDown" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <DatePicker x:Name="txtDataInicial" HorizontalAlignment="Left" Margin="641,121,0,0" VerticalAlignment="Top" Width="97" DisplayDate="2017-12-15" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>
         <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="25" Margin="293,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}"/>

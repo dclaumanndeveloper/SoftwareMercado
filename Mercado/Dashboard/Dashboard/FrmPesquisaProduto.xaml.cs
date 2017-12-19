@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CamadaDados;
 
 namespace Dashboard1
 {
@@ -42,6 +43,11 @@ namespace Dashboard1
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+           
         }
     }
 }
