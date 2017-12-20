@@ -12,7 +12,7 @@ namespace CamadaDados
     using System;
     using System.Collections.Generic;
     
-    public partial class TabelaCadUsuario
+    public partial class TabelaCadUsuario1
     {
         public int id { get; set; }
         public string login { get; set; }
@@ -24,7 +24,7 @@ namespace CamadaDados
         public Nullable<System.DateTime> datahoraultimoacesso { get; set; }
     
         public virtual TabelaLoja TabelaLoja { get; set; }
-        public virtual TabelaSetorUsuario TabelaSetorUsuario { get; set; }
-        public virtual TabelaSituacaoCadastro TabelaSituacaoCadastro { get; set; }
+        public virtual TabelaSetorUsuario1 TabelaSetorUsuario { get; set; }
+        public virtual TabelaSituacaoCadastro1 TabelaSituacaoCadastro { get; set; }
     }
 }

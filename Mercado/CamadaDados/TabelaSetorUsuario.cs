@@ -17,13 +17,13 @@ namespace CamadaDados
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TabelaSetorUsuario()
         {
-            this.TabelaCadUsuarios = new HashSet<TabelaCadUsuario>();
+            this.TabelaCadUsuario = new HashSet<TabelaCadUsuario>();
         }
     
         public int id { get; set; }
         public string Descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TabelaCadUsuario> TabelaCadUsuarios { get; set; }
+        public virtual ICollection<TabelaCadUsuario> TabelaCadUsuario { get; set; }
     }
 }

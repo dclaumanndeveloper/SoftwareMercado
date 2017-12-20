@@ -50,20 +50,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityDataModel.Context.cs">
+    <Compile Include="DataModelMercado.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EntityDataModel.Context.tt</DependentUpon>
+      <DependentUpon>DataModelMercado.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModelMercado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModelMercado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModelMercado.edmx</DependentUpon>
     </Compile>
     <Compile Include="EntityDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EntityDataModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="EntityDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>EntityDataModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -71,51 +81,82 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>EntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="TabelaCadProduto.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaCadProduto1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaCadUsuario.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaCadUsuario1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaComprador.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaComprador1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaFamiliaProduto.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaFamiliaProduto1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaFornecedor.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaFornecedor1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaLoja.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaMercadoria.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaMercadoria1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaSetorProduto.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaSetorProduto1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaSetorUsuario.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaSetorUsuario1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaSituacaoCadastro.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaSituacaoCadastro1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TabelaUnidadeMedida.cs">
+      <DependentUpon>DataModelMercado.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TabelaUnidadeMedida1.cs">
       <DependentUpon>EntityDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <EntityDeploy Include="EntityDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EntityDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="EntityDataModel.edmx.diagram">
-      <DependentUpon>EntityDataModel.edmx</DependentUpon>
+    <None Include="app.config" />
+    <EntityDeploy Include="DataModelMercado.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModelMercado.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataModelMercado.edmx.diagram">
+      <DependentUpon>DataModelMercado.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -128,14 +169,19 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EntityDataModel.Context.tt">
+    <Content Include="DataModelMercado.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>EntityDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>DataModelMercado.edmx</DependentUpon>
+      <LastGenOutput>DataModelMercado.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModelMercado.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataModelMercado.edmx</DependentUpon>
+      <LastGenOutput>DataModelMercado.cs</LastGenOutput>
     </Content>
     <Content Include="EntityDataModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EntityDataModel.edmx</DependentUpon>
+      <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>EntityDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>

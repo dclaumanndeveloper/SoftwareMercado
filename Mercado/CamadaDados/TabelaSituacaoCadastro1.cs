@@ -12,18 +12,18 @@ namespace CamadaDados
     using System;
     using System.Collections.Generic;
     
-    public partial class TabelaUnidadeMedida
+    public partial class TabelaSituacaoCadastro1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TabelaUnidadeMedida()
+        public TabelaSituacaoCadastro1()
         {
-            this.TabelaCadProduto = new HashSet<TabelaCadProduto>();
+            this.TabelaCadUsuario = new HashSet<TabelaCadUsuario1>();
         }
     
         public int id { get; set; }
-        public string Descricao { get; set; }
+        public string descricao { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TabelaCadProduto> TabelaCadProduto { get; set; }
+        public virtual ICollection<TabelaCadUsuario1> TabelaCadUsuario { get; set; }
     }
 }

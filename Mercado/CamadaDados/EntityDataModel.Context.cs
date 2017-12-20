@@ -25,17 +25,16 @@ namespace CamadaDados
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<TabelaCadProduto> TabelaCadProdutoes { get; set; }
-        public virtual DbSet<TabelaCadUsuario> TabelaCadUsuarios { get; set; }
-        public virtual DbSet<TabelaComprador> TabelaCompradors { get; set; }
-        public virtual DbSet<TabelaFamiliaProduto> TabelaFamiliaProdutoes { get; set; }
-        public virtual DbSet<TabelaFornecedor> TabelaFornecedors { get; set; }
-        public virtual DbSet<TabelaLoja> TabelaLojas { get; set; }
-        public virtual DbSet<TabelaMercadoria> TabelaMercadorias { get; set; }
-        public virtual DbSet<TabelaSetorProduto> TabelaSetorProdutoes { get; set; }
-        public virtual DbSet<TabelaSetorUsuario> TabelaSetorUsuarios { get; set; }
-        public virtual DbSet<TabelaSituacaoCadastro> TabelaSituacaoCadastroes { get; set; }
-        public virtual DbSet<TabelaUnidadeMedida> TabelaUnidadeMedidas { get; set; }
+        public virtual DbSet<TabelaCadProduto1> TabelaCadProduto1Set { get; set; }
+        public virtual DbSet<TabelaCadUsuario1> TabelaCadUsuario1Set { get; set; }
+        public virtual DbSet<TabelaComprador1> TabelaComprador1Set { get; set; }
+        public virtual DbSet<TabelaFamiliaProduto1> TabelaFamiliaProduto1Set { get; set; }
+        public virtual DbSet<TabelaFornecedor1> TabelaFornecedor1Set { get; set; }
+        public virtual DbSet<TabelaLoja> TabelaLojaSet { get; set; }
+        public virtual DbSet<TabelaMercadoria1> TabelaMercadoria1Set { get; set; }
+        public virtual DbSet<TabelaSetorProduto1> TabelaSetorProduto1Set { get; set; }
+        public virtual DbSet<TabelaSetorUsuario1> TabelaSetorUsuario1Set { get; set; }
+        public virtual DbSet<TabelaSituacaoCadastro1> TabelaSituacaoCadastro1Set { get; set; }
+        public virtual DbSet<TabelaUnidadeMedida1> TabelaUnidadeMedida1Set { get; set; }
     }
 }

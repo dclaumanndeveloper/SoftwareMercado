@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using CamadaDados;
 
+
 namespace Dashboard1
 {
-    /// <summary>
-    /// Lógica interna para FrmPesquisaProduto.xaml
-    /// </summary>
     public partial class FrmPesquisaProduto : Window
     {
         public FrmPesquisaProduto()
         {
             InitializeComponent();
+            
+            {
+                
+            }
         }
 
         private void txtCodigo_TextChanged(object sender, TextChangedEventArgs e)
@@ -43,11 +45,34 @@ namespace Dashboard1
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
+
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           
+            try
+            {
+                dbMercadoEntities1 context = new dbMercadoEntities1();
+
+                var result = from produto in context.TabelaCadProduto
+                             select produto;
+                if (result.ToList().Count > 0)
+                {
+                    txtStatus.Text = "Leitura feita com sucesso";
+                }
+
+                DataGridPesquisaProduto.ItemsSource = result.ToList();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message); 
+            }
+        }
+
+        private void situacao_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }
